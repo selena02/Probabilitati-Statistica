@@ -1,0 +1,1314 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage[margin=1.25in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{indentfirst}
+\usepackage{changepage}
+\usepackage{dsfont}
+\usepackage{tabularx}
+\newcommand{\Emptyset}{\text{\o}}
+\newcommand{\indep}{\perp \!\!\! \perp}
+\renewcommand{\baselinestretch}{1.3}
+
+\graphicspath{ {./images/} }
+
+\title{\Huge Probabilitati si Statistica}
+\author{\Large Oancea Elena-Antonia, Hurloi Selena-Andreea}
+\date{2022}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Cursul 1}
+\subsection{Introducere in Probabilitati si Statistica}
+\includegraphics{c1_p1.png}
+\\
+Experiment: Urna cu bile albe si negre, proportia bilelor albe este p $\epsilon$ (0,1) necunoscut.\\
+ Probabilitati: p=0,17 ,extragem 10 bile.\\
+\indent Care este probabilitatea ca in cele 10 bile sa avem 4 bile de culoare alba?\\
+\includegraphics{c1_p2.png}\\
+Statistica: Am extras 10 bile (cu intoarcere) si 4 sunt albe.\\
+\indent  Ce pot spune despre p?\\
+
+\subsection{Camp de probabilitate.Operatii cu evenimente}
+Experiment aleator = sir de actiuni care conduc la un rezultat necunoscut inaintea realizarii lui.\\
+$\Omega $ = multimea evenimentelor elementare / spatiul starilor / spatiul probelor.\\
+$\Omega $ = \{H(head),T(tail)\} pentru ban\\
+$\Omega $ = \{1,2,3,4,5,6\} pentru zar\\
+\\
+$\omega $ $\epsilon$ $\Omega$\\
+$\Omega $ :\\
+\indent a) mutual exclusivitate\\
+\indent b) colectiv exhaustive\\
+Dau cu banul si ma uit la vreme:\\
+\indent 1) H si ploua\\
+\indent 2) T si ploua\\
+\indent 3) H si nu ploua\\
+\indent 4) T si nu ploua\\
+\indent $\Omega $ = \{H,T\} pentru ca vremea nu influenteaza experimentul\\
+
+\subsubsection{Exemplul 1}
+Arunc cu 3 monede.\\
+$\Omega$ = \{ (x,y,z) \big{|} x,y,z $\epsilon$ \{H,T\} \}\\
+\subsubsection{Exemplul 2}
+Arunc cu 2 zaruri.\\
+$\Omega$ = \{ (x,y) \big{|} x,y $\epsilon$ \{1,2,3,4,5,6\} \}\\
+\includegraphics{c1_p3.png}\\
+\subsubsection{Exemplul 3}
+$\Omega$ = [0,T] , T$\geq$0\\
+\subsubsection{Exemplul 4}
+$\Omega$ = $\{ (x,y) \big{|} {x^2} + {y^2} \leq {R^2} \}$ \\
+\includegraphics{c1_p4.png}\\
+\subsubsection{Exemplul 5}
+$\Omega$ = $\{ (x,y) \big{|}  -a \leq x \leq a , -b \leq y \leq b \big{|} a,b>0 \}$ \\
+\includegraphics{c1_p5.png}\\
+\textbf{Definitie}
+\indent O\indent submultime \indent A $\epsilon\Omega$ se numeste eveniment. \\
+Spunem ca evenimentul A se realizeaza daca in urma desfasurarii experimentului aleator rezulta $\omega\epsilon$A.\\
+\begin{tabular}{c|c|c}
+  & Teoria multimii &  Teoria probabilitatilor\\
+  \hline
+ $\Omega$ & multimea $\Omega$ & spatiul starilor/eveniment sigur\\
+ \hline
+ $\omega$ & un element din $\Omega$ & evenimentul elementar\\
+ \hline
+ $\emptyset$ & multimea vida & evenimentul imposibil\\
+ \hline
+ A & multimea & evenimentul A\\
+ \hline
+ ${A^{C}}$ & complemetara lui A in $\Omega$ & eveniment cotrar lui A\\
+ \hline
+ A $\cup$ B & reuniune & cel putin un eveniment \\
+ & & din A sau B se realizeaza\\
+ \hline
+ A $\cap$ B &  intersectie & evenimentele din A si evemenimentele\\
+ & & din B se realizeaza simultan\\
+ \hline
+ A $\setminus$ B & diferenta & A se realizeaza, dar B nu\\
+ \hline
+ A $\triangle$ B & diferenta simetrica & sau A sau B se realizeaza, dar nu amandoua\\
+ \hline
+\end{tabular}
+\subsection{Diagramele Venn}
+\indent REUNIUNE \\ \includegraphics{c1_p6.png}\\
+\indent INTERSECTIE\\ \includegraphics{c1_p7.png}\\
+\indent COMPLEMENTARA\\ \includegraphics{c1_p8.png}\\
+\indent A $\setminus$ B\\ \includegraphics{c1_p9.png}\\
+\indent A $\triangle$ B\\ \includegraphics{c1_p10.png}\\
+\textbf{Definitie} \indent Multimea evenimentelor posibile asociate experimentelor aleatoare cu spatiul starilor $\Omega$ este o submultime\\
+\indent \indent\indent\indent $\textit{F}\subseteq \mathbb{P} (\Omega)$ care verifica urmatoarele proprietati:\\
+\indent\indent a) ${\Omega \: \epsilon \: \textit{F}}$\\
+\indent\indent b) daca A ${\epsilon \: \textit{F} \Rightarrow A^{C} \: \epsilon \: \textit{F} }$\\
+\indent\indent c) daca A,B ${\epsilon \: \textit{F} \Rightarrow A \: \cup \: B \: \epsilon \: \textit{F} }$\\
+Aruncam cu banul pana obtinem pentru prima oara H.\\
+$\Omega$ = \{ 1,2,3,..\} = $N^{*}$\\
+A = \{am obtinut pentru prima data H dupa un numar par de ori\}=\{2,4,..\}=$ \bigsqcup_{n=1}^ {\infty}\{2i\} $\\\\
+${{c^{'}}}$) Daca ${({A_{n}})_{n}\: \epsilon\: \textit{F}}$ atunci ${\bigsqcup_{n=1}^ {\infty} A_{n} \epsilon  \: \textit{F}}$\\\\
+$\textit{F}$ care verifica a,b si ${{c^{'}}}$ se numeste $\sigma$-algebra\\\\
+$\Omega$ - spatiul starilor\\
+${(\Omega,\textit{F})}$ spatiul probabilizabil (spatiul masurabil)\\
+experiment aleator $\to$ ${(\Omega,\textit{F},\mathbb{P})}$\\\\
+$\textbf{Proprietati}$ Avem ${(\Omega,\textit{F})}$ :\\
+\indent 1) $\Omega$ = \{H,T\}\\
+\indent \indent $\textit{F}$ = $\mathbb{P}(\Omega)$ = $\{\o,\{H\},\{T\},\Omega\}$\\
+\indent 2) $\Omega$ = \{1,2,3,4,5,6\}\\
+\indent \indent  $\textit{F}$ = ${\mathbb{P}(\Omega)}$  ${\simeq}$ $\{0,1\}^{\big{|} \Omega \big{|}}$\\
+
+
+
+\section{Cursul 2}
+\subsection{Camp de probabilitate.Operatii cu evenimente.Formule de calcul}
+\indent experiment aleator $\to$ ${(\Omega,\textit{F})}$\\
+\indent \indent $\mathbb{P}$ : $\textit{F}$ $\to$ [0,1]\\
+\indent Presupunem ca avem un experiment aleator si un eveniment A de interes. Repetam experimentul (in conditii similare) de un numar mare de ori(N).\\
+\indent\indent $N_{A}$ - numar de realizari ale lui A\\
+\indent\indent $\frac{N_{A}}{N}$ - frecventa relativa de realizare a lui A\\
+\indent \indent $N_{A}$ = \{0,1,2,..,N\}\\
+\indent\indent ${\mathbb{P} (A) \simeq}$ ${ \lim_{N \rightarrow  \infty } \frac{N(A)}{B}  }$ \\
+\indent\indent ${\frac{N(A)}{N} \epsilon [0,1]}$ \\
+\indent\indent ${\mathbb{P} (A) \epsilon [0,1]}$\\
+Daca A = ${\Omega \ \Longrightarrow N (\Omega) = N  \Longrightarrow \frac{N(A)}{N} = 1 \Longrightarrow   \mathbb{P} (A) =1} $  \\
+\indent ${\mathbb{P} (A) \epsilon [0,1]}$\\
+\indent ${\mathbb{P} (\Omega) = 1}$\\
+Presupunem ca A,B ${\epsilon \textit{F} , A \cap B = \emptyset}$\\
+\indent ${A \cup B \epsilon \textit{F}}$\\
+\indent ${N(A \cup B) = N(A) + N(B)}$\\
+\indent ${\mathbb{P} (A \cup B) = \mathbb{P} (A) + \mathbb{P} (B)}$ - finit aditivitate\\
+\includegraphics{c2_p1.png}\\\\
+
+$\textbf{Definitie}$ O functie ${\mathbb{P} :  \textit{F} \to [0,1]}$ se numeste masura de probabilitate pe ${(\Omega, \textit{F})}$ daca verifica urmaroarele proprietati:\\
+\indent a) ${\mathbb{P} (\Omega) = 1}$ \\
+\indent b) oricare ar fi ${(A_{n})_{n}  \subseteq  \textit{F}}$ disjuncte 2 cate 2\\
+Experiment aleator $\to$ ${(\Omega, \textit{F}, \mathbb{P} (B))}$ camp de probabilitate\\
+\subsubsection{Aruncatul cu banul}
+${\Omega = \{H,T\}}$\\
+${\textit{F} = \textit{P} (\Omega) = \{\emptyset,\{H\},\{T\},\Omega\}}$\\
+${\mathbb{P} : \textit{F} \to [0,1]}$\\
+${\mathbb{P}(\Omega) = 1}$ , ${\mathbb{P}(\emptyset) = 0}$\\
+${\mathbb{P}\{H\} = p \: \epsilon [0,1) \Longrightarrow \mathbb{P}\{T\} = 1-p}$\\
+Moneda echilibrata $\Longrightarrow$ p = $\frac{1}{2}$\\
+
+\subsubsection{Aruncatul cu zarul}
+${\Omega = \{1,2,3,4,5,6\}}$\\
+${\textit{F} = \textit{P} (\Omega) \Longrightarrow 2^{6}}$ elemente\\
+${\{0,1\}^{\Omega}}$ = ${\{f:\Omega \to \{0,1\}\}}$\\
+${\mathbb{P}:\textit{F} \to [0,1]}$\\
+${\mathbb{P}(\Omega) = 1}$ , ${\mathbb{P}(\emptyset) = 0}$\\
+${\mathbb{P}(\{i\}) = p_{i} \: \epsilon [0,1], i \epsilon \{1,2,3,4,5,6\}}$\\
+
+\subsubsection{Proprietati}
+\noindent a)${\mathbb{P}(\emptyset)=0}$\\
+\indent\indent ${\Omega \cup \emptyset = \Omega}$\\
+\indent\indent ${\Omega \cap \emptyset = \emptyset}$\\
+\indent Sirul ${A_{n} = \emptyset}$\\
+\indent\indent ${ \bigcup_n \: A_{n} = \emptyset}$\\
+\indent Presupunem ca ${\mathbb{P}(\emptyset) > 0}$\\
+\indent \indent\indent\indent ${\mathbb{P}(\emptyset) =  \sum_n{\mathbb{P}(\emptyset)} \to \infty \Longrightarrow \: contradictie}$\\\\
+\noindent b) ${\mathbb{P}(A_1 \cup A_2 \cup ... \cup A_n)}$ = ${\sum_{i=1}^n \mathbb{P} (A_i)}$ , ${A_1,A_2,..,A_n \: disjuncte\:  2\: cate\: 2}$\\\\
+\noindent c)${A \: \epsilon \textit{F} \Longrightarrow \mathbb{P}(A^c)=1-\mathbb{P}(A)}$\\
+ \includegraphics{c2_p2.png}\\
+ (1) ${A \cap A^c = \emptyset}$\\
+ (2) ${A \cup A^c = \Omega}$ \\
+ Din (1) si (2) ${\Longrightarrow \mathbb{P}(A \cup A^c) = \mathbb{P}(\Omega) =1 = \mathbb{P}(A) + \mathbb{P}(A^c)}$\\\\
+\noindent d) ${A \subseteq B \Longrightarrow \mathbb{P}(A) \leq \mathbb{P}(B)}$\\\\
+\noindent e) A,B ${\epsilon \textit{F},\: \mathbb{P}(A \cup B) = ?}$
+\indent ${A \cup B = A \cup (B \setminus A) = \emptyset}$\\
+\indent ${\mathbb{P}(A \cup B) = \mathbb{P}(A) + \mathbb{P}(B \setminus A) = \mathbb{P}(A) + \mathbb{P}(B \setminus (A \cap B) ) = \mathbb{P}(A) + \mathbb{P}(B) - \mathbb{P}(A \cap B)}$\\\\
+\noindent ${e^{'}}$) A,B,C, ${\mathbb{P}(A \cup B \cup C) = \mathbb{P}(A) + \mathbb{P}(B) +\mathbb{P}(C) - \mathbb{P}(A \cap B)- \mathbb{P}(A \cap C)- \mathbb{P}(B \cap C) + \mathbb{P}(A \cap B \cap C)}$\\\\
+\noindent f) Formula lui Poincar${\Acute{e}}$\\
+\noindent ${\mathbb{P}(A_1 \cup A_2 \cup .. \cup A_n) = \sum_{i=1}^n \mathbb{P}(A_i) - \sum_{i<j}^n \mathbb{P}(A_i \cap A_j) + \sum_{i<j<k}^n \mathbb{P}(A_i \cap A_j \cap A_k )+.. }$\\
+\indent\indent\indent ${ .. + (-1)^{n+1}\mathbb{P}(A_1 \cap .. \cap A_n)}$\\\\
+\indent ${\mathbb{P}(A \cup B) \leq \mathbb{P}(A) + \mathbb{P}(B)}$\\
+\indent ${\mathbb{P}(A \cap B) \geq \mathbb{P}(A) + \mathbb{P}(B)-1}$\\
+
+\subsection{Modelul clasic de posibilitate.Modelul lui Laplace}
+Fie N ${\geq 1, N \epsilon \mathbb{N}}$ si consideram un experiment aleator cu N rezultate posibile.\\
+${\Omega = \{\omega_1,\omega_2,..m\omega_n\}}$\\
+${\textit{F}=\mathbb{P}(\Omega) \Longrightarrow 2^N elemente}$\\
+${\mathbb{P}:\textit{F} \to [0,1], \: \mathbb{P}(\{N_i\})= \frac{1}{N},\: i\epsilon\{1,2,3,..,N\}}$ echirepartitie\\
+Fie A ${\epsilon \textit{F}}$\\
+\indent ${\mathbb{P}(A)=\mathbb{P}(\bigcup_{\omega_i \epsilon A} \{\omega_i\})=\sum_{\omega_i \epsilon A} \mathbb{P}(\{\omega_i\})}$\\
+\indent A - multimea evenimentelor favorabile\\
+\indent ${\mathbb{P}(A)= \frac{1}{N} \sum_{\omega_i \epsilon A} 1 = \frac{|A|}{N}= \frac{|A|}{|\Omega|}=\frac{numar\: cazuri\: favorabile}{numar\: cazuri\: posibile}}$\\
+
+\subsubsection{Formula sumei}
+\noindent A,B finite  disjuncte ${\Longrightarrow |A \cup B|=|A|+|B|}$\\
+\noindent A,B finite oarecare ${\Longrightarrow |A \cup B|=|A|+|B|-|A \cap B|}$\\\\
+${\textbf{\underline{Principiul includerii si excluderii}}}$\\
+${A_1,A_2,..,A_n}$ finita\\
+${|A_1 \cup A_2 \cup .. \cup A_n| = \sum_{i=1}^n |A_i| - \sum_{i<j}^n |A_i \cap A_j| + \sum_{i<j<k}^n |A_i \cap A_j \cap A_k|+}$\\
+\indent \indent\indent\indent ${..+(-1)^{n+1}|A_1 \cap A_2 \cap .. \cap A_n|}$\\
+
+${\underline{Aplicatie}}$\\
+${\varphi(n)}$ - numar de numere prime cu n $\leq$ n  (functia lui Euler)\\
+${\varphi(n)= n \Pi_{p|n}(1-\frac{1}{p})}$\\
+
+\subsubsection{Formula produsului}
+A,B finite A $\times$ B = ${\{(a,b)|a \epsilon A, b\epsilon B\}}$\\
+${|A \times B| =|A|\times|B| }$\\
+
+\section{Curs 3}
+\subsection{Schema cu revenire}
+Urna cu n bile 1..n si efectuam k extrageri cu revenire.\\
+\indent\indent In cate moduri?(1)\\
+Reformulare: k bile (1..k) si n nume\\
+\indent\indent ${(x_1,x_2,..,x_k), x_i}$ -numarul urnei in care am pus bila i ${\Longrightarrow n^k noduri}$\\\\
+${\Longrightarrow_{(1)} }$ numarul de siruri de lungime k cu termeni din $\{1,2,..,n\}$\\
+
+\subsection{Schema de extragere fara revenire}
+Urna cu n bile ${\{1,2,..,n\}}$ si efectuam k extrageri fara intoarcere.
+\indent In cate moduri? \\
+Reformulare: Numarul de siruri de lungime k de termeni distincti din ${\{1,2,..,n\}}$\\
+\indent\indent n(n-1)(n-2)...(n-k+1) = ${A_n^{k} = \frac{n!}{(n-k)!}}$\\
+\subsubsection{Experimentul 1}
+Cate cuvinte puteti forma cu literele cuvantului "MATE"?\\
+${\textbf{cu revenire}\Longrightarrow 4^4=256\: cuvinte}$\\
+${\textbf{fara revenire}\Longrightarrow 4!=24\: cuvinte}$\\
+
+\subsubsection{Experimentul 2}
+4 carti de matematica, 3 de fizica, 2 de istorie, 1 de geografie\\
+Vrem sa pastram grupate cartiile pe domenii.\\
+${\Longrightarrow 4!*(4!*\: 3!*\: 2!*\: 1!)}$\\
+
+\subsubsection{Experimentul 3.Problema aniversarilor}
+n persoane\\
+Vrem sa vedem care este probabilitatea ca cel putin 2 persoane sa se fi nascut in aceeasi zi.\\
+\begin{tabular}{c c}
+${\underline{Ipoteza}:}$ & - anul are 365 de zile\\
+& -echirepartitia\\
+& -nu avem gemeni\\
+\end{tabular}\\
+Campul de probabilitate pe care lucram:\\
+${\Omega =\{(z_1,z_2,..,z_n)| z_i \epsilon \{1,2,..,365\}\}}$\\
+${|\Omega| = {365}^n}$\\
+${\textit{F} = \mathbb{P}(\Omega)}$ - multimea evenimentelor posibile\\
+${\mathbb{P}:\textit{F}\to [0,1]}$\\
+${\mathbb{P}(\{\omega\})=\frac{1}{365^n}}$ echirepartitia\\
+A - cel putin 2 persoane s-au nascut in aceeasi zi\\
+${A=\{(z_1,z_2,..,z_n)\epsilon \Omega|\exists i,j, i\neq j\: a.i.\: z_i=z_j\}}$\\
+${\mathbb{P}(A)=\frac{|A|}{|\Omega|}}$\\
+${\mathbb{P}(A)=1-\mathbb{P}(A^c)}$\\
+${A^c}$- toate cele n persoane s-au nascut in zile diferite\\
+${\mathbb{P}(A^c)=\frac{|A^c|}{|\Omega|}=\frac{365*364*..*(365-n+1)}{{365}^n}}$\\
+${\mathbb{P}(A)=1-\frac{\frac{365!}{(365-n)!}}{{365}^n}}$\\
+Pentru n=23 ${\Longrightarrow \mathbb{P}(A) \approx 51\%}$\\
+\subsubsection{Experimentul 4}
+Avem n persoane si am vrea sa formam comisii de cate 4 persoane.\\
+Reformulare: Numarul de submultimi cu k elemente a unor submultimi cu n elemente.Ordinea nu conteaza!\\
+${C_n^k= \frac{n!}{k!(n-k)!}}$\\
+${(x_1,x_2,..,x_k)\to \frac{n!}{(n-k)!} }$\\
+k!\\\\
+${\textbf{Exemplul 1.}\:}$ 52 carti.Cate maini de 5 carti?${\to C_{52}^5}$\\\\
+${\textbf{Exemplul 2.}\:}$ Cate maini de 5 carti contin 2 asi, 2 popi si o dama? ${\to (_2^4)*(_2^4)*(_4^4)}$\\\\
+${\textbf{Exemplul 3.}\:}$ In jocul de Poker vreau sa determin probabilitatea sa obtin Fullhouse(Q,Q,3,3,3).\\
+${\Omega=\{(\omega_1,\omega_2,\omega_3,\omega_4,\omega_5)|\omega_i \: \epsilon \: carti de joc\}}$\\
+${|\Omega|=C_{52}^5}$\\
+${\textit{F}=\mathbb{P}(\Omega)}$\\
+${\mathbb{P}:\textit{F}\to [0,1]}$\\
+${\mathbb{P}(\{\omega_1,..,\omega_5\}) \: \epsilon \: echirepartitie = \frac{1}{C_{52}^5}}$\\
+A - evenimentul prin care am obtinut Fullhouse\\
+${\mathbb{P}(A)=\frac{|A|}{|\Omega|}}$\\
+${|A|}$-putem alege figura pentru pereche in ${C_{13}^1}$, culoarea o putem alege in ${C_4^2}$, pentru cele 3 carti avem ${C_{12}^1}$ moduri de a alege figura, iar ${C_4^3}$ pentru culoare.\\
+\indent\indent${|A|=(_1^{13})*(_2^4)*(_1^{12})*(_3^4)}$\\\\
+
+${\textbf{Exemplul 4.}\:}$ Probabilitatea sa obtinem o pereche?\\
+B- evenimentul prin care obtinem o pereche\\
+\indent\indent${(_1^{13})*(_2^4)*(_3^{12})*(_1^4)}$\\
+
+\subsection{Problema lui Newton-Pepys}
+\noindent a)Cel putin un 6 apare atunci cand aruncam cu 6 zaruri.\\
+\indent ${\Omega=\{1,2,3,4,5,6\}^6}$\\
+\indent A - evenimentul de interes\\
+\indent ${\mathbb{P}(A)=\frac{|A|}{|\Omega|}=1-\mathbb{P}(A^c)=1-\frac{5^6}{6^6}}$\\
+\\
+b)Cel putin 2 valori de 6 apar cand aruncam cu 12 zaruri.\\
+\indent ${\Omega=\{1,2,3,4,5,6\}^{12}}$\\
+\indent B - cel putin 2 valori de 6 in 12 zaruri\\
+\indent ${\mathbb{P}(B)=1-\mathbb{P}(B^c)=1-\mathbb{P}(nici\: o\: valoare\: de\: 6)-\mathbb{P}(exact\: o\: valoare\: de\: 6)=1-\frac{5^{12}}{6^{12}}-\frac{C_{12}^{11} * 5^{11}}{6^{12}} }$\\
+\\
+c)Cel putin 3 valori de 6 apar cand aruncam cu 18 zaruri.\\
+\indent C - evenimentele cu cel putin 3 valori de 6 in 18 aruncari.\\
+\indent ${\Omega=\{1,2,3,4,5,6\}^{18}}$\\
+\indent ${\mathbb{P}(C)=1-\mathbb{P}(C^c)}$\\
+\indent ${\mathbb{P}(C^c)=\frac{5^{18}}{6^{18}}+\frac{(_1^{18})*5^{17}}{6^{18}}+\frac{(_2^{18})*5^{16}}{6^{18}}}$\\\\
+
+\subsection{Partitii - coeficientul multinomial}
+Avem o multime cu n elemente si fie ${n_1,n_2,..,n_k \: \epsilon \mathbb{N}}$ a.i. ${n_1+n_2+..+n_k=n}$\\
+\indent Consideram o partitie cu k submultimi a.i. submultimea i sa aiba n elemente.\\
+\indent\indent Pentru k=2 , ${n_1+n_2=n \Longrightarrow (_{n_1}^n)}$\\
+\indent Echivalent cu multimea sirurilor de lungime n cu ${n_1}$ elemente de tip 1, ${n_2}$ elemente de tip 2,.., ${n_k}$ elemente de tip k.\\
+${(_{n_1}^{n})*(_{n_2}^{n-n_1})*(_{n_3}^{n-n_1-n_2})*..*(_{n_k}^{n-n_1-n_2-..-n_{k-1}})= (_{n_1,n_2,..,n_k}^{n})}$\\
+\subsubsection{Experimentul 1}
+Numarul de anagrame a cuvantului "MATEMATICA".
+${M \to 2}$\\
+${A \to 3}$\\
+${T \to 2}$\\
+${E \to 1}$\\
+${I \to 1}$\\
+${C \to 1}$\\
+${\Longrightarrow (_{2,3,2,1,1}^{10})}$\\
+\subsubsection{Experimentul 2}
+4 baieti si 12 fete\\
+Profesorul formeaza in mod aleator 4 subgrupe de cate 4 studenti. Care e probabilitatea ca in fiecare subgrupa sa fie un baiat?\\
+\indent\indent ${(_{4,4,4,4}^{16})}$\\\\
+\indent ${\mathbb{P}(\omega)=\frac{1}{(_{4,4,4,4}^{16})}}$\\
+\indent 4! moduri pentru baieti\\\\
+\indent ${\frac{4!*(_{3,3,3,3}^{12})}{(_{4,4,4,4}^{16})}}$\\
+\subsubsection{Extragere cu revenire in care ordinea nu conteaza}
+In cate moduri putem plasa k bile (care nu se disting intre ele) din n urne?\\
+\indent Pentru n=6, k=12\\
+\indent ${x_1+x_2+..+x_n=k, x_i \epsilon \mathbb{N}^*}$\\
+\indent ${(_{n-1}^{n+k-1})=(_{k}^{n+k-1})}$\\\\
+
+
+\section{Cursul 4}
+
+\subsection{Probabilitati conditionate}
+\subsubsection{Experimentul 1}
+Aruncam cu o moneda de 3 ori. \\
+a)Care este probabilitatea sa optinem HHH?\\
+\indent ${\Omega=\{H,T\}^3=\{HHH,HHT,THH,THT,HTH,HTT,TTH,TTT\}}$\\
+\indent ${A=\{HHH\}}$\\
+\indent ${\mathbb{P}(A)=\frac{1}{8}}$\\
+b)Stim ca la prima aruncare am obtinut H.\\
+\indent ${\Omega_2=\{HHH,HHT,HTH,HTT\}}$\\
+\indent ${\mathbb{P}(A|B)=\frac{1}{4}}$\\
+\indent B- evenimentul prin care la prima aruncare am obtinut H.\\
+\indent ${\mathbb{P}(A|B)}$ - probabilitatea realizarii lui A stiind ca B s-a realizate ${||}$ probabilitatea conditionata a lui A la B\\\\
+${\textbf{Din perspectiva frecventionala:}}$ Avem un experiment pe care il repetam de un numar N de ori. Ne intereseaza evenimentele A si B. \\\\
+\indent\indent ${\frac{N(A \cap B)}{N(B)}=\frac{\frac{N(A \cap B)}{N}}{\frac{N(B)}{N}}  \simeq  \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)}}$\\\\
+
+${\textbf{Definitie.}}$ Fie ${(\Omega,\textit{F},\mathbb{P})}$ un camp de probabilitate , A,B ${\epsilon \textit{F}}$ cu ${\mathbb{P}(B) > 0}$ atunci definim probabilitatea conditionata a lui A la evenimentul B si notam ${\mathbb{P}(A|B)}$ prin ${\mathbb{P}(A|B)=\frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)}}$\\
+\indent ${\mathbb{P}(A)}$ -prior sau probabilitate a priori\\
+\indent ${\mathbb{P}(A|B)}$ -posterior sau probabilitate a posteriori\\
+
+\subsubsection{Exemplul 2}
+Carti de joc. Extragem in mod aleator 2 carti succesiv fara intoarcere.\\
+\indent A - prima carte de inima rosie\\
+\indent B - a doua carte este de inima rosie\\
+\indent C - a doua carte este de culoare rosie\\
+\indent ${\mathbb{P}(B|A)=\frac{\mathbb{P}(A \cap B)}{\mathbb{P}(A)}=\frac{\frac{13*12}{52*51}}{\frac{13}{52}}=\frac{12}{51}}$\\\\
+\indent ${\mathbb{P}(C|A)=\frac{\mathbb{P}(A \cap C)}{\mathbb{P}(A)}=\frac{\frac{13*25}{52*51}}{\frac{13}{52}}=\frac{25}{51}}$\\\\
+\indent ${\mathbb{P}(A|B)=\frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)}=\frac{\frac{13*12}{52*51}}{\frac{1}{4}}=\frac{12}{51}=\mathbb{P}(B|A)}$\\\\
+\indent ${\mathbb{P}(A|C)=\frac{\mathbb{P}(A \cap C)}{\mathbb{P}(C)}=\frac{\frac{13*25}{52*51}}{\frac{25}{52}}=\frac{25}{102}\neq \mathbb{P}(C|A)}$\\\\
+
+
+\subsubsection{Exemplul 3}
+O familie are 2 copii.\\
+a)Care este probabilitatea ca cei 2 copii sa fie de sex feminin stiind ca cel mai in varsta este fata?\\
+b)Care este probabilitatea ca cei 2 copii sa fie de sex feminin stiind ca cel putin unul dintre ei este fata?\\
+${\textit{Ipoteza:} \{F,B\}}$\\
+\indent ${\mathbb{P}(\textit{F})=\mathbb{P}(B)=\frac{1}{2}}$\\
+\indent sexul unui copil nu este influentat de celalalt copil\\
+${\Omega=\{BB,BF,FB,FF\}}$\\
+${A=\{FF\}}$\\
+a) B - cel mai mic este fata = ${\{FB,FF\}}$\\
+\indent ${\mathbb{P}(A|B)=\frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)}=\frac{1/4}{2/4}=1/2}$\\\\
+b) C - cel putin unul este fata = ${\{FB,BF,FF\}}$\\
+\indent ${\mathbb{P}(A|C)=\frac{\mathbb{P}(A \cap C)}{\mathbb{P}(C)}=\frac{1/4}{3/4}=1/3}$\\\\
+
+\subsubsection{Exemplul 4}
+Daca o aeronava apare in zona de interes scanata de un radar atunci se declanseaza o alarma cu probabilitatea de 0,99. Daca nu avem o aeronava alarma se declanseaza cu probabilitatea de 0,1. Sansa sa treaca o aeronava prin zona de interes este 0,05.\\
+a)Care este probabilitatea ca in zona de interes sa nu avem avion si sa avem alarma?\\
+b)Care este probabilitatea sa avem avion nedectat?\\
+\indent A - sa avem avion in zona de inters\\
+\indent B - sa se declanseze alarma\\
+a) ${\mathbb{P}(A^c \cap B) = \mathbb{P}(B|A^c)*\mathbb{P}(A^c)=\mathbb{P}(B|A^c)*(1-\mathbb{P}(A))=0,1*0,95}$\\
+b) ${\mathbb{P}(A \cap B^c)=\mathbb{P}(B^c| A)* \mathbb{P}(A)=(1-\mathbb{P}(B|A))*\mathbb(P)(A)=0.01*0.05}$\\\\
+
+Pentru formula produsului. (${\Omega,\textit{F},\mathbb{P}}$) camp de probabilitate\\
+\indent \indent ${A_1,A_2,..,A_n \epsilon \textit{F},\: \mathbb{P}(A_1 \cap A_2 \cap ... \cap A_n)>0}$\\
+\indent Atunci \\
+\indent \indent ${\mathbb{P}(A_1 \cap A_2 \cap ... \cap A_n) = \mathbb{P}(A_1)*\mathbb{P}(A_2|A_1)*...*\mathbb{P}(A_n | A_1 \cap A_2 \cap ... \cap A_(n-1))}$\\\\
+${\textbf{Formula probabilitatii totale}}$\\
+${(\Omega,\textit{F},\mathbb{P})}$ camp de probabilitate o partitie a lui ${\Omega}$, ${\{B_1,B_2,B_3\}}$ si A ${\epsilon \textit{F}}$\\
+${B_1,B_2,B_3  \subseteq \Omega}$\\
+${B_1 \cup B_2 \cup B_3 = \Omega}$\\
+${B_1 \cap B_2=\emptyset}$\\
+${B_2 \cap B_3=\emptyset}$\\
+${B_1 \cap B_3=\emptyset}$\\
+${A= A \cap \Omega = A \cap (B_1 \cap B_2 \cap B_3) = (A \cap B_1) \cup (A \cap B_2) \cup (A \cap B_3)}$\\
+${\mathbb{P} (A) = \mathbb{P} (A \cap B_1)+ \mathbb{P}(A \cap B_2) + \mathbb{P} (A \cap B_3)=\mathbb{P} (A|B_1) *\mathbb{P} (A|B_1)
++ \mathbb{P}(A \cap B_2) + \mathbb{P} (A \cap B_3)=}$\\
+\indent\indent${= \mathbb{P}(A|B_1)*\mathbb{P}(B_1)+\mathbb{P}(A|B_2)*\mathbb{P}(B_2)+\mathbb{P}(A|B_3)*\mathbb{P}(B_3)}$\\\\
+${\textit{Propozitie.}}$ Fie ${(\Omega,\textit{F},\mathbb{P})}$ un camp de probabilitate si ${B_1,B_2,..,B_i \epsilon \textit{F}}$ o partitie pe \indent ${\Omega \: cu \: \mathbb{P}(A) > 0 , i \epsilon \{1,..,n\}}$. \\
+\indent Daca ${A \epsilon \textit{F} \: atunci: \mathbb{P}(A)=\sum_{i=1}^{n} \mathbb{P}(A|B_i)* \mathbb{P}(B_i) }$\\\\
+\\
+\subsection{Formula lui Bayes}
+Fie ${(\Omega,\textit{F},\mathbb{P})}$ camp de probabilitate ${A,B \epsilon \textit{F} \: cu \: \mathbb{P}(A)>0,\: \mathbb{P}(B)>0}$.\\
+a)${\mathbb{P}(B|A)=\frac{\mathbb{P}(A \cap B)}{\mathbb{P}(A)}=\frac{\mathbb{P}(A|B)*\mathbb{P}(B)}{\mathbb{P}(A)}=\frac{\mathbb{P}(A|B)*\mathbb{P}(B)}{\mathbb{P}(A|B)*\mathbb{P}(B)+\mathbb{P}(A|B^c)*\mathbb{P}(B^c)}}$\\\\
+b) ${A \epsilon \textit{F}, \: B_1,..,b_n\epsilon\textit{F}}$ o partitie a lui ${\Omega, \mathbb{P}(B_1)>0}$\\
+\indent ${\mathbb{P}(B_i|A)=\frac{\mathbb{P}(A|B_i)*\mathbb{P}(B_i)}{\sum_{j=1}^n \mathbb{P}(A|B_j)*\mathbb{P}(B_j)}}$\\
+
+\subsubsection{Experimentul 1}
+Sa presupunem ca prevalenta unei boli in populatie este de 1\%. Presupunem ca efectuam un test de detectie cu o acuratete de 95\%.\\
+acuratete=senzitivitatea si specificacitatea testului\\
+${\mathbb{P}(T|D)}$ = senzitivitate = rata de true positive\\
+${\mathbb{P}(T^c|D^c)}$ = specificacitatea = rata de true negative\\
+D - pacientul este infectat\\
+T - test pozitiv\\
+${\mathbb{P}(T|D^c)}$ = false positive \\
+${\mathbb{P}(T^c|D)}$ = false negative \\
+Presupunem ca am efectuat testul si a iesit pozitiv . Care este probabilitatea sa avem virusul stiind ca testul este pozitiv?\\
+${\mathbb{P}(D|T)\stackrel{Formula \: lui \: Bayes}{========}\frac{\mathbb{P}(T|D)*\mathbb{P}(D)}{\mathbb{P}(T)}=\frac{\mathbb{P}(T|D)*\mathbb{P}(D)}{\mathbb{P}(T|D)*\mathbb{P}(D)+\mathbb{P}(T|D^c)*\mathbb{P}(D^c)}}$\\
+${\mathbb{P}(T|D^c)=1-\mathbb{P}(T^c|D^c)=0.05}$\\
+${\mathbb{P}(D|T)=\frac{0.95*0.01}{0.95*0.01+0.05*0.99}=0.16}$\\\\
+${\textit{Propozitie.}}$ Probabilitatea conditionata este o probabilitate.\\
+${(\Omega,\textit{F},\mathbb{P})}$ camp de probabilitate si ${A\epsilon\textit{F},\: \mathbb{P}(A)>0}$\\
+\indent definim Q(.) = ${\mathbb{P}(B|A)}$\\
+\indent\indent ${Q(B)=\mathbb{P}(B|A)}$\\
+${(A,\textit{F}\cap A)}$\\
+Q(A)=1=${\mathbb{P}(A|A)=\frac{\mathbb{P}(A\cap A)}{\mathbb{P}(A)}}$\\
+${(A_n)_n \subseteq \textit{F}\cap A }$ disjuncte 2 cate 2\\
+\indent\indent ${Q(\bigcup_{n} A_n)=\sum Q(A_n)}$\\
+${\mathbb{P}(\bigcup_n A_n|A)=\frac{\mathbb{P}(\bigcup_n A_n \cap A)}{\mathbb{P}(A)}=\frac{\sum \mathbb{P}(A_n \cap A)}{\mathbb{P}(A)}=\sum Q(A_n)}$\\
+
+\subsubsection{Exemplul 2}
+${\Omega,\textit{F},\mathbb{P}}$ camp de probabilitate\\
+A,B,C ${\epsilon\textit{F}, \: \mathbb{P}(A \cap B)>0}$\\
+\indent \indent\indent  ${\:\mathbb{P}(A\cap C)>0}$\\
+\indent \indent\indent  ${\:\mathbb{P}(B\cap C)>0}$\\
+${\mathbb{P}(A|B,C)=\frac{\mathbb{P}(B|A,C)*\mathbb{P}(A|C)}{\mathbb{P}(B|C)}}$\\
+${Q(.)=\mathbb{P}(.|C)}$\\
+
+
+\section{Cursul 5}
+${\Omega,\textit{F},\mathbb{P},\: A\epsilon\textit{F},\: \mathbb{P}(A)>0}$\\
+Q(B)=${\mathbb{P}(B|A), \forall \: B\epsilon\textit{F} \cap A=\{\textit{F}\cap A|F\epsilon \textit{F}\}}$\\
+
+${\textit{Formula \: lui \: Bayes.} \: Q(.)=\mathbb{P}(.|C)}$\\
+${Q(A|B)=\frac{Q(B|A)*Q(A)}{Q(B)}}$\\
+${\mathbb{P}(A|B,C)=\frac{\mathbb{P}(B|A,C)*\mathbb{P}(A|C)}{\mathbb{P}(A|C)}}$\\
+${Q(A|B)=\mathbb{P}(A|B,C)}$\\
+
+\subsection{Experimentul 1}
+Avem 2 monede (1 echilibrata si 1 trucata)\\
+La cea trucata ${\mathbb{P}(H)=3/4}$\\
+Sansa sa alegem oricare dintre cele 2 monede este 1/2.
+Obtinem in urma celor 3 aruncari HHH\\
+\indent a) Care este probabilitatea ca moneda sa fi fost echilibrata?\\
+\indent b) Presupunem ca arunca pentru a 4-a oara moneda, care este probabilitatea sa fi obtinut H?\\
+a) A - evenimentul prin care in primele 3 aruncari am obtinut HHH\\
+\indent B - evenimentul prin care am ales moneda echilibrata\\
+${\mathbb{P}(B|A)=\frac{\mathbb{P}(A|B)*\mathbb{P}(B)}{\mathbb{P}(A)}=\frac{\mathbb{P}(A|B)*\mathbb{P}(B)}{\mathbb{P}(A|B)*\mathbb{P}(B) + \mathbb{P}(A|B^c)* \mathbb{P}(B^c)}=\frac{(\frac{1}{2})^3* \frac{1}{2}}{(\frac{1}{2})^3*\frac{1}{2}+(\frac{3}{4})^3*\frac{1}{2}}=\frac{1}{1+\frac{3^3}{2^3}}}$\\
+
+b) C - evenimentul prin care la a 4-a aruncare am obtinut H\\
+\indent ${\mathbb{P}(C|A)=?}$\\
+\indent ${Q(.)=Q(.| A)}$\\
+${Q(C)=\mathbb{P}(C|A)=Q(C|B)*Q(B)+Q(C|B^c)*Q(B^c)}$\\
+${Q(B)=\mathbb{P}(B|A)}$\\
+${Q(B^c)=1-Q(B)}$\\
+${Q(C|B)=1/2}$(moneda echilibrata)\\
+${Q(C|B^c)=3/4}$(moneda trucata)\\
+${Q(C)=\frac{1}{2}+\frac{1}{1+\frac{3^2}{2^3}}+\frac{3}{4}*(1-\frac{1}{1+\frac{3^3}{2^3}})}$\\
+
+\subsection{Independenta}
+Doua evenimente sunt independente daca realizarea uneia nu aduce informatii suplimentare despre realizarea celeilalte.
+${(\Omega,\textit{F},\mathbb{P}),\:A,B\epsilon\textit{F}}$\\
+${\Longrightarrow \mathbb{P}(A|B)=\mathbb{P}(B|A)\Longleftrightarrow \frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)}=\mathbb{P}(A)\Longleftrightarrow \: \mathbb{P}(A \cap B )=\mathbb{P}(A)*\mathbb{P}(A)}$\\\\
+
+${\textbf{Definitie.}}$ Fie ${(\Omega,\textit{F},\mathbb{P})}$ un camp de probabilitate ${A,B \epsilon \textit{F}}$. Spunema ca A si B sunt independente si notam ${A \indep B}$ daca ${\mathbb{P}(A\cap B) =\mathbb{P}(A)*\mathbb{P}(B)}$.\\
+Exemplu: Daca ${A\indep B}$ atunci ${A^c\indep B, \: A\indep B^c,\: A^c\indep B^c}$\\
+\subsubsection{Experimentul 1}
+Aruncam cu banul de 2 ori\\
+${A_1}$ - evenimentul prin care la prima aruncare am obtinut H\\
+${A_2}$ - evenimentul prin care la a 2-a aruncare am obtinut H\\
+${\Omega=\{H,T\}^2}$\\
+${A_1=\{HH,HT\}}$\\
+${A_2=\{TH,HH\}}$\\
+${A_1\cap A_2 = \{HH\}}$\\
+${\mathbb{P}(A_1\cap A_2)=\frac{1}{4},\:\mathbb{P}(A_1)=\mathbb{P}(A_2)=\frac{1}{2}\Longrightarrow\mathbb{P}(A_1\cap A_2)=\mathbb{P}(A_1)*\mathbb{P}(A_2)}$
+
+\subsubsection{Experimentul 2}
+Zar cu 4 fete\\
+Aruncam de 2 ori ${\Longrightarrow \Omega=\{1,2,3,4\}^2}$\\
+${A=\{primul\: zar\: are\: fata\: 1\}=\{(1,x)|x \epsilon \{1,2,3,4\}\}\Longrightarrow \mathbb{P}(A)=\frac{1}{4}}$\\
+${B=\{suma \: punctelor \: este \: 5\}=\{(1,4),(2,3),(3,2),(4,1)\}\Longrightarrow\mathbb{P}(B)=\frac{1}{4}}$\\
+${C=\{minimul \: este \: 2\}\Longrightarrow \mathbb{P}(C)=\frac{5}{12}}$\\
+${D=\{maximul \: este \: 3\}\Longrightarrow \mathbb{P}(D)=\frac{3}{16}}$\\
+${A\cap B=\{(1,4)\}\Longrightarrow\mathbb{P}(A\cap B)=\frac{1}{16}\Longrightarrow}$ A si B sunt independente\\
+${\mathbb{P}(C\cap D)=\frac{1}{16}\Longrightarrow}$ C si D nu sunt independente\\
+
+${\textbf{Definitie.}}$ Fie ${(\Omega,\textit{F},\mathbb{P})}$ camp de probabilitate si ${A_1,A_2,..,A_n \epsilon\textit{F}}$.\\
+Spunem ca ${A_1,..,A_n}$ sunt independente (mutual independente) daca:\\
+\indent\indent ${\mathbb{P}(\bigcap_{i\epsilon I} A_i)=\prod_{i\epsilon I}\mathbb{P}(A_i),\: \forall \: I=\{1,2,..,n\}}$\\
+${\textbf{Observatie.} A_1,A_2,A_3}$ sunt independente ${\Longleftrightarrow}$\\
+\indent ${\Longleftrightarrow \mathbb{P}(A_1\cap A_2)=\mathbb{P}(A_1\cap A_3)=\mathbb{P}(A_2\cap A_3),\: \mathbb{P}(A_1\cap A_2\cap A_3)=\mathbb{P}(A_1)*\mathbb{P}(A_2)*\mathbb{P}(A_3)}$\\
+Pentru n=2 ${\Longrightarrow 2^n-n-1 \: conditii = C_n^2+C_n^3+..+C_n^n}$\\
+
+\subsubsection{Experimentul 3(continuare experimentul 1)}
+${A_3 = cele\: 2\: sunt\: diferite=\{HT,TH\}}$\\
+${A_1\indep A_2}$\\
+${\mathbb{P}(A_1)=\mathbb{P}(A_2)=\mathbb{P}(A_3)=\frac{1}{2}}$\\
+${\mathbb{P}(A_1\cap A_2)=\mathbb{P}(A_1\cap A_3)=\mathbb{P}(A_2\cap A_3)=\frac{1}{4}}$\\
+${A_1,A_2,A_3}$ sunt independente 2 cate 2\\
+${A_1\cap A_2\cap A_3=\emptyset\Longrightarrow\mathbb{P}(A_1\cap A_2\cap A_3)=0\neq \frac{1}{8}\Longrightarrow A_1,A_2,A_3}$ nu sunt independente\\\\
+${\textbf{Definitie.}(\Omega,\textit{F},\mathbb{P})}$ camp de probabilitate si ${A,B,C\epsilon\textit{F},\: \mathbb{P}(C)>0}$\\
+\indent Spunem ca A si B sunt independente conditionat la C daca ${\mathbb{P}(A\cap B|C)=\mathbb{P}(A|C)*\mathbb{P}(B|C)}$\\
+\indent ${Q(.)=\mathbb{P}(.|C)\Longrightarrow Q(A\cap B)=Q(A)*Q(B)}$\\
+
+\subsubsection{Experimentul 4(continuare experiment covid)}
+
+D - ${\{o\: persoana\: are\: afectiunea\}}$\\
+T - ${\{testul\: a\: iesit\: pozitiv\}}$\\
+${\mathbb{P}(D)=1\%}$\\
+acuratetea (sensibilitatea,specificacitatea) =95\%\\
+${\mathbb{P}(T|D)=\mathbb{P}(T^c|D^c)=95\%}$\\
+${\mathbb{P}(D|T)\approx 15\%}$\\
+\indent Sa presupunem ca persoanele mai efectueaza un test (presupunem ca rezultatele celor 2 teste sunt independente in raport cu statusul bolii respective ) si testul este tot pozitiv. Care este probabilitatea sa avem COVID?\\
+${T_1}$ - primul test pozitiv\\
+${T_2}$ - al 2-lea test pozitiv\\
+${\mathbb{P}(T_1 \cap T_2 |D)=\mathbb{P}(T_1|D)*\mathbb{P}(T_2|D)}$\\
+${\mathbb{P}(T_1 \cap T_2 |D^c)=\mathbb{P}(T_1|D^c)*\mathbb{P}(T_2|D^c)}$\\
+${\mathbb{P}(D|T_1\cap T_2)=\frac{\mathbb{P}(T_1\cap T_2|D) * \mathbb{P}(D)}{\mathbb{P}(T_1\cap T_2)}\approx 0,78}$\\
+${\mathbb{P}(T_1\cap T_2)=\mathbb{P}(T_1\cap T_2|D)*\mathbb{P}(D)+\mathbb{P}(T_1\cap T_2|D^c)*\mathbb{P}(D^c)}$\\
+
+\subsubsection{Experimentul 5}
+\includegraphics[width=90mm]{c5_p1.jpeg}\\
+
+a)Subsistem serie\\
+\includegraphics[width=90mm]{c5_p2.jpeg}\\
+${\mathbb{P}_{AC}=\mathbb{P}_{AB}*\mathbb{P}_{BC}}$\\
+
+b)Subsistem paralel\\
+\includegraphics[width=90mm]{c5_p3.jpeg}\\
+${\mathbb{P}(transmit\: mesaj\: sistem\: paralel)=1-p(sa \: nu \: transmit)=}$\\
+\indent\indent\indent ${= 1-p(esec\: in\: nodul\: 1,..,n)=}$\\
+\indent\indent\indent ${= 1-p(esec\: in\: nodul\: 1)*p(esec\: in\: nodul\: 1)*...*p(esec\: in\: nodul\: n)=}$\\
+\indent\indent\indent ${=1-(1-p_1)(1-p_2)...(1-p_n))}$\\
+${\mathbb{P}(C\to B)=1-(1-\mathbb{P}(C\to E,E\to B))*(1-\mathbb{P}(C\to F,F\to B))=}$\\
+\indent\indent\indent ${=1-(1-\mathbb{P}_{CE}*\mathbb{P}_{EB})*(1-\mathbb{P}_{CF}*\mathbb{P}_{FB})}$\\
+
+\subsection{Variabile aleatoare}
+${\textbf{Definitie.}}$ Fie ${(\Omega,\textit{F},\mathbb{P})}$ camp de probabilitate si ${X:\Omega \to \mathbb{R}}$ o functie reala. Spunem ca X este o variabila aleatoare daca multimea ${\{\omega\epsilon\Omega|X(\omega)\leq x\}\epsilon\textit{F},\forall x\epsilon \mathbb{R}}$.\\
+\subsubsection{Experiment}
+2 zaruri. Definim X=$\{suma\: punctelor\: de\: pe\: cele\: 2\: zaruri\}$\\
+\indent\indent\indent ${3\:\:\: 5 \to 8}$\\
+\indent\indent\indent ${X((3,5))=8}$\\
+X=$\{numarul\: de\: H\: din\: cele\: 2\: aruncari\}$\\
+${\Omega=\{HH,HT,TH,TT\}}$\\
+${X(\Omega)=\{2,1,1,0\}}$\\
+${X\epsilon\mathbb{R}}$\\
+${\textbf{Observatie.}\{X\leq x\}\subset \{\omega \epsilon\Omega|X(\omega)\leq x\}}$\\
+\indent\indent\indent ${\{X\epsilon A\}=\{\omega\epsilon\Omega|X(\omega)\epsilon A\}=X^{-1}(A)}$\\
+${X^{-1}(\{0\})=\{TT\}}$\\
+${X^{-1}(\{1\})=\{HH\}}$\\
+${X^{-1}(\{2\})=\{HT,TH\}}$\\
+${\{X\leq x\}\epsilon\textit{F}(=\mathbb{P}(\Omega))}$\\\\
+Daca ${X<0,\:\{X\leq x\}=\emptyset}$\\
+\indent\indent ${X\epsilon[0,1), \{X\leq x\}=\{TT\}}$\\
+\indent\indent ${X\epsilon[1,2), \{X\leq x\}=\{HT,TH\}\cup \{TT\}}$\\
+\indent\indent ${X\epsilon[2,+\infty), \{X\leq x\}=\{HT,TH,TT,HH\}=\Omega}$\\
+
+\subsubsection{Repartitia unei variabile aleatoare}
+Fie ${(\Omega,\textit{F},\mathbb{P})}$ camp de probabilitate si ${X:\Omega\to \mathbb{R}}$. Se numeste repartitia lui X probabilitatea pe ${\mathbb{R}}$ definite prin \\
+\indent ${\mathbb{P}_x(A)=\mathbb{P}(X\leftarrow A)=\mathbb{P}(X^{-1}(A))=(\mathbb{P}\circ X_{-1})(A) , \forall A\: interval\: in \: \mathbb{R}}$\\\\
+${\textbf{Definitie.}Functia \: de\: repartitie .\: Fie \: (\Omega,\textit{F},\mathbb{P})\: camp \: de\: probabilitate \: X:\Omega\to\mathbb{R}}$\\
+Definim functia de repartitie a lui X, ${F:\mathbb{R}\to [0,1]}$ prin ${F(x)=\mathbb{P}(X\leq x),\forall x\epsilon\mathbb{R}}$\\
+\subsubsection{Experiment}
+Aruncam de 2 ori cu banul si X=numarul de H din cele doua aruncari\\
+${F(x)=\mathbb{P}(X\leq x)=0, x<0}$\\
+${F(x)=\mathbb{P}(X\leq x)=\frac{1}{4}, x\epsilon[0,1)}$\\
+${F(x)=\mathbb{P}(X\leq x)=\frac{3}{4}, x\epsilon[1,2)}$\\
+${F(x)=\mathbb{P}(X\leq x)=1, x\epsilon[2,+\infty)}$\\
+\subsubsection{Proprietati functia de repartitie}
+a) F este crescatoare\\
+\indent\indent\indent ${x<y\Longrightarrow F(x)\leq F(y)}$\\
+b) F este continua la dreapta\\
+\indent\indent\indent ${\lim_{x \rightarrow {x_0}} F(x) = F(x_0)}$\\
+c)${\lim_{x \rightarrow {\infty}} F(x) = 0}$\\
+\indent ${\lim_{x \rightarrow {\infty}} F(x) = 1}$\\
+${\mathbb{P}(X=x)=\mathbb{P}(X\leq x)-\mathbb{P}(X < x)=F(x_0)-F(X-)}$
+
+\section{Cursul 6}
+
+\subsection{Variabile aleatoare}
+${X:\Omega\to\mathbb{R}}$\\
+${\{X\leq x\}\epsilon\:\textit{F},\:\forall x\epsilon\mathbb{R}}$\\
+${(\Omega,\textit{F},\mathbb{P}),\: X\: variabila \: aleatoara\: si\: \mathbb{P}_x(A)=\mathbb{P}(x\epsilon A),\: \forall A\epsilon\mathbb{R}\: interval}$\\
+${\{X\epsilon A\}=\{\omega\epsilon\mathbb{R}|x(\omega)\epsilon A\}=X^{-1}(A)}$\\\\
+${\mathbb{P}_x(.)=(\mathbb{P}\circ X^{-1})(.)}$\\
+
+\subsection{Functia de repartitie/cumulativa(CDF)}
+${F:\mathbb{R}\to [0,1]}$\\
+${F(x)=\mathbb{P}_x((-\infty,x])=\mathbb{P}(X\leq x),\: \forall x\epsilon\mathbb{R}}$\\
+\subsubsection{Experiment}
+Aruncam de 3 ori cu banul.\\
+X = numarul de H in cele 3 aruncari\\
+Care este functia de repartitie a lui X?
+${\Omega=\{H,T\}^3,\: X\epsilon\{0,1,2,3\}}$\\
+${\mathbb{P}(x=0)=\mathbb{P}(TTT)=\frac{1}{8}}$\\
+${\mathbb{P}(x=1)=\mathbb{P}(\{HTT,THT,TTH\})=\frac{3}{8}}$\\
+${\mathbb{P}(x=2)=\mathbb{P}(\{HHT,HHT,THH\})=\frac{3}{8}}$\\
+${\mathbb{P}(x=3)=\mathbb{P}(HHH)=\frac{1}{8}}$\\
+\includegraphics[width=90mm]{c6_p1.jpeg}\\
+\\
+F(x)=?\\
+${F(x)=0=\mathbb{P}(\emptyset),\: x<0}$\\
+${F(x)=\frac{1}{8},\: 0\leq x<1}$\\
+${F(x)=\frac{1}{8}+\frac{3}{8}=\frac{1}{2},\: 1\leq x<2}$\\
+${F(x)=\frac{1}{8}+\frac{3}{8}+\frac{3}{8}=\frac{7}{8},\: 2\leq x<3}$\\
+${F(x)=1,\: 3\leq x}$\\
+\includegraphics[width=90mm]{c6_p2.jpeg}\\
+\subsubsection{Proprietatile functiei de repartitie}
+a) F crescatoare: ${\forall \: x<y \: \Longrightarrow \: F(x)\leq F(y)}$\\
+b) F continua la dreapta: ${\lim_{x \rightarrow x_0,x>x_0} F(x)=F(x_0)\: \forall \: x_0\epsilon\mathbb{R}}$\\
+c) ${\lim_{x\to -\infty}F(x)=0}$\\
+\indent ${\lim_{x\to +\infty}F(x)=1}$\\
+In plus,\\
+d) ${\mathbb{P}(X>x)=1-\mathbb{P}(X\leq x)=1-F(x)}$\\
+e) ${\mathbb{P}(X<x_0)=\mathbb{P}(X\leq x_0)-\mathbb{P}(X=x_0)=\lim_{x\to x_0,x<x_0}F(x)}$\\
+f) ${\mathbb{P}(X=x)=F(x)-\lim_{x\to x_0,x<x_0}F(x)}$\\
+
+\subsection{Variabile aleatoare discrete}
+${X:\Omega \to \mathbb{R} \: variabila \: aleatoare \: X(\Omega)=multimea \: valorilor\: lui\: X}$\\
+${X(\Omega)\Longrightarrow \: finita \: sau\: numarabila \longrightarrow X\: este \: variabila\: aleatoare\: discreta}$\\
+\indent\indent ${\Longrightarrow \: infinita \: sau\: numarabila \longrightarrow X\: este \: variabila\: continua}$\\
+X variabila aleatoare discreta, ${X:\Omega\to\mathbb{R}}$\\
+${A\epsilon\mathbb{R}}$\\
+${\mathbb{P}(x\epsilon A)=?}$\\
+${\Omega=\bigcup_{n\geq 1}{X=x_n}}$\\
+${\mathbb{P}(x\epsilon A)=\mathbb{P}(x\epsilon \bigcup_{x\epsilon A\cap X(\Omega)}\{x\})=\sum_{x\epsilon A\cap X(\Omega)}\mathbb{P}(X=x)}$\\\\
+${\textbf{Definitie.}}$ Fie ${(\Omega,\textit{F},\mathbb{P})}$ un camp de probabilitate si ${X:\Omega\to\mathbb{R}}$ o variabila aleatoare distincta. Se numeste functie de masa asociata:\\
+\indent\indent\indent ${f(x)=\mathbb{P}(X=x),\: \forall x\epsilon X(\Omega),\: f:X(\Omega)\to [0,1]}$\\
+${\textbf{Observatie.}}$ Se mai foloseste si notatia p(x) sau ${p_x(x)}$.\\
+\subsubsection{Experiment}
+Aruncam de 3 ori cu banul , X = numarul de H din cele 3 aruncari. Determinati functia de masa a lui X.\\
+${f(x)=\mathbb{P}(X>x)\: \forall \: x\epsilon\{0,1,2,3\}=X(\Omega)}$\\
+${f(0)=\frac{1}{8},\:f(1)=\frac{3}{8},\:f(2)=\frac{3}{8},\:f(3)=\frac{1}{8}}$\\
+\includegraphics[width=90mm]{c6_p3.jpeg}\\
+\\
+${\textbf{Observatie.}X\epsilon\{x_1,x_2,..,x_n\}}$\\
+${\mathbb{P}(X=x_i=p_i)}$\\
+${X\sim (^{x_1\:\: x_2\:\: ..\:\:x_n}_{p_1\:\: p_2\:\: ..\:\: p_n})}$\\
+\subsubsection{Proprietatile functiei de masa}
+a) ${f(x)=\mathbb{P}(X=x)\geq 0 \:(\:pozitiva\:)}$\\
+b) ${\mathbb{P}(\Omega)=1}$\\
+\indent ${\Omega=\bigcup_{x\epsilon X(\Omega)}\{X=x\}\Longrightarrow \mathbb{P}(\bigcup \{X=x\})=1\Longrightarrow}$\\
+\indent\indent\indent\indent ${\Longrightarrow \sum_{x\epsilon X(\Omega)} f(x)=1}$ ( masa totala = 1)\\\\
+${\textbf{Observatie.}}$( Legatura dintre functia de masa si functia de repartitie )\\
+\indent\indent ${F(x)=\mathbb{P}(X\leq x)=\sum_{y\epsilon x,y\epsilon X(\Omega)} f(y)}$\\
+\indent\indent ${f(x)=F(x)-F(x-)}$\\
+
+\subsubsection{Exemple de variabile discrete}
+1) Variabila aleatoare X = c(constanta)\\
+\indent ${f(x)=\mathbb{P}(X=x)=1,\: x=c}$\\
+\indent\indent\indent\indent\indent\indent ${=0, x\neq c}$\\
+\indent ${F(x)=\mathbb{P}(X\leq x)=0,\: x<c}$\\
+\indent\indent\indent\indent\indent\indent ${=1, x\geq c}$\\
+Daca x<c ${\Longrightarrow \: \{X\leq x\}=\{\omega|X(\omega)\leq x\}=\{c\leq x\}=\Emptyset}$\\
+\\\\
+2) Variabila aleatoare discrete Bernoulli\\
+Avem un experiment si un eveniment A de interes. Presupunem ca ${\mathbb{P}(A)=p\:\epsilon[0,1]}$\\
+${X:\Omega\to\mathbb{R}}$\\
+${X(\Omega)=1,\: \omega\epsilon A}$\\
+\indent\indent${=0,\: altfel}$\\
+${f(1)=\mathbb{P}(x=1)=\mathbb{P}(A)=p}$\\
+${f(0)=\mathbb{P}(x=0)=\mathbb{P}(A^c)=1-p}$\\
+\\\\
+F(x)=0, ${x<0}$\\
+\indent =1-p, ${0\leq x < 1}$\\
+\indent = 1, ${x\geq 1}$\\
+\\\\
+${\underline{Variabila\: aleatoare\: indicator:} \: 1_A(\omega)=1\:\:, \omega\epsilon A}$\\
+\indent\indent\indent\indent\indent\indent\indent\indent\indent\indent\indent ${=0\:\:,\omega\notin A}$\\\\
+${\underline{Scrierea\: sub\: forma\: compacta\: a\: functiei\: de \: masa}}$\\
+\indent\indent ${f(x)=p^x(1-p)^{1-x},\: x\in \{0,1\}}$\\
+\\\\
+3) ${X:\Omega\to\mathbb{R}}$\\
+\indent ${X(\Omega)=\{x_1,x_2,..,x_n\}}$ si sa presupunem ca ${x_1<x_2<..<x_n}$\\
+\indent ${\mathbb{P}(X=x_i)=p_i \:\in (0,1)\:,x\in\{0,1\}}$\\\\
+${\underline{Graficul\: functiei\: de \: masa}}$\\
+\includegraphics[width=90mm]{c6_p4.jpeg}\\
+${F(x)=\mathbb{P}(X\leq x)= \begin{cases}0 & x \leq x_1\\p_1 & x_1 \leq x < x_2\\ p_1+p_2 & x_2\leq x<x_3\\ .......... & .......\\1 & x\geq x_n\end{cases}}$\\
+\\\\\\\\
+4) Variabile aleatoare de tip binomial\\
+\indent Presupunem ca avem un experiment aleator si A un eveniment de interes. Repetam experimentul de n ori si ne interesam la numarul de realizari ale evenimentului A.\\
+X = numarul de realizari al evenimentului A in n repetari ale experimentului\\
+${X\sim B(n,p)}$ - variabila aleatoare repartizata binomial de parametru n si p\\
+${X\in \{0,1,2,..,n\}}$\\\\
+${\underline{Functia \: de\: masa}: f(x)=\mathbb{P}(X=k)=?,\: k\in\{0,1,..,n\}}$\\
+\fbox{\begin{minipage}{15em}
+${\mathbb{P}(X=k)=C_n^k (1-p)^{n-k} * p^k}$
+\end{minipage}}
+\\\\
+${\textbf{Observatie.}}$ X = ${y_1+y_2+..+y_n}$\\ 
+ \indent\indent ${y_i \sim B(p)}$\\\\
+${\textbf{Experiment.}}$ Urna cu bile albe si negre: N bile, M negre.\\
+Extragem n bile cu intoarcere.\\
+X = numarul de bile negre dintre cele extrase\\
+${X \sim B(n,\frac{M}{N})}$\\
+\\\\\\
+5) Variabila aleatoare repartizata hipergeometric\\
+\indent Avem o urna cu N bile albe si negre si M de culoare neagra. Extragem n bile fara intoarcere si ne intereseaza numarul de bile negre din cele n extrase.\\
+X = numarul de bile negre din cele n extrase este reprezentat hipergeometric HG(n,N,M)\\
+${X\sim HG(n,N,M), \: X\in \{0,1,..,min\{M,n\}\}}$\\
+${\mathbb{P}(X=k)=\frac{\big{(^M_k) *(^{N-M}_{n-k})}}{\big{(^N_n)}}}$\\\\
+${\underline{Loto \: 6 \: din \: 49:\:}\begin{cases}& x_1,x_2,x_3,x_4,x_5,x_6 \\ & 1\:, 17\:, 23\:,41\:,39\:,5\end{cases}}$\\
+Care este probabilitatea sa fi nimerit k=3 numere?\\
+N=49\\
+M=6\\
+n=6\\
+${\mathbb{P}(X=3)=\frac{\big{(^6_3)(^{43}_3)}}{\big{(^{49}_6)}}}$\\
+${\mathbb{P}(X\in \{3,4,5,6\})=1-\mathbb{P}(X=0)-\mathbb{P}(X=1)-\mathbb{P}(X=2)\approx 0.18}$\\
+${\sum^{min(n,M)}_{k=0}(^M_k)(^{N-M}_{n-k})=(^N_n)}$\\
+\\\\\\
+6) Uniforma pe ${\{1,2,..,n\}}$ (Echirepartitia)\\
+${X:\Omega\to\mathbb{R}}$\\
+${X(\Omega)=\{1,2,..,n\}}$ (D finita)\\
+${f(k)=\mathbb{P}(X=k)=\frac{1}{n}=\frac{1}{|D|} \: \forall k\in\{1,2,..,n\}}$\\
+\\
+${\underline{Functia\: de\: masa}}$\\
+\includegraphics[width=90mm]{c6_p5.jpeg}\\
+${\underline{Functia\: de\: repartitie}}$\\
+\includegraphics[width=90mm]{c6_p6.jpeg}\\
+\\
+${\mathbb{P}(X\in A)=\frac{|A\cap D|}{|D|},\: \forall \: A\in\mathbb{R}}$\\
+
+\section{Cursul 7}
+\subsection{Experiment}
+O urna cu bile numerotate de la 1 la 100. Extragem 5 bile din urna (succesiv).\\
+a) Care este repartitia variabilei aleatoare care ne da numarul bileleor ${\geq 70}$?\\
+b) Cum este repartitia variabilei aleatoare care ne da a 17-a extragere?\\
+c) Care este probabilitatea ca numarul 79 sa fie extras cel putin o data?\\\\
+${\underline{1.Extragere\: cu\: revenire}}$\\
+a) ${X\sim B(5(numarul\: de\: extrageri),\frac{31}{100}(probabilitatea\: sa\: avem\: succes))}$\\
+b) ${X_1,X_2,..,X_5\in \{1,..,100\}}$\\
+${X_1\sim \textit{U}(\{1,2,..,100\})}$\\
+${X_2\sim \textit{U}(\{1,2,..,100\})}$\\
+${\begin{aligned} c)\mathbb{P}(\{79\: sa\: & fie\: extras\: cel\:  putin\: o \: data\})=\\ &=\mathbb{P}(\{X_1=79\}\cup \{X_2=79\}\cup \{X_3=79\}\cup \{X_4=79\}\cup \{X_5=79\})=\\
+& = 1-\mathbb{P}(\{X_1\neq 79\}\cup \{X_2\neq 79\}\cup \{X_3\neq 79\}\cup \{X_4\neq 79\}\cup \{X_5\neq 79\})=\\
+&= 1-\mathbb{P}(\{X_1\neq 79\})*\mathbb{P}(\{X_2\neq 79\})*\mathbb{P}(\{X_3\neq 79\})*\mathbb{P}(\{X_4\neq 79\})*\mathbb{P}(\{X_5\neq 79\})=\\
+& = 1-\big(\frac{99}{100}\big)^5 
+\end{aligned}}$\\\\
+
+${\underline{1.Extragere\: fara\: revenire}}$\\
+a) ${Y\sim HG(5,100,31)}$\\
+b) ${y_1,y_2,..,y_5}$\\
+${y_1\sim \textit{U}(\{1,2,..100\})}$\\
+${y_2\sim \textit{U}(\{1,2,..100\})}$\\
+${\mathbb{P}(y_2=j)=\sum^{100}_{i=1} \mathbb{P}(y_2=j|y_2=i)*\mathbb{P}(y_2=i)}$\\
+O partitie a lui ${\Omega=B_1\cap B_2\cap..\cap B_n\:}$(disjuncte 2 cate 2)\\
+${\mathbb{P}(A)=\sum^n_{i=1} \mathbb{P}(A|B_i)*\mathbb{P}(B_u)}$\\
+${\mathbb{P}(y_2=j|y_2=i)=\begin{cases} & 0,\: j=i\\ & \frac{1}{99},\: j\neq i\end{cases}}$\\
+${\mathbb{P}(y_2=j)=\sum^{100}_{i=1}\mathbb{P}(y_2=j|y_2=i)*\mathbb{P}(y_1=i)=99*\frac{1}{99}*\frac{1}{100}=\frac{1}{100}}$\\
+c) ${\mathbb{P}(..)=\mathbb{P}(\{y_1=79\}\cup \{y_2=79\}\cup..\cup \{y_5=79\})=\sum^5_{i=1}\mathbb{P}(y_1=79)=\frac{5}{100}}$\\
+\\\\
+${\underline{Repartitia\: geometrica\: si\: negativ\: binomiala}}$\\
+\indent Aruncam cu o moneda in mod repetat , iar sansa de succes = p(${\mathbb{P}\{H\}=p}$)\\
+X = variabila aleatoare care ne da numarul de aruncari pana obtinem pentru prima oara succes(H) incluzand primul succes\\
+${X\in \{1,2,3,..\}}$\\
+${TTH\Longrightarrow x=3}$\\
+${H\Longrightarrow x=1}$\\
+${\mathbb{P}(x=k)=(1-p)^{k-1}*p\: ,k\geq 1}$\\
+${X \sim G(p)}$\\
+${\sum^\infty_{k=1}(1-p)^{k-1}*p=p*\sum^\infty_{k=1}=\frac{p}{1-p}=\frac{p}{q}\to 1}$\\
+Daca ${ x \in (0,1),\: n\to\infty\Longrightarrow \sum_{x\geq 0}x^k=\frac{1}{1-x}}$\\
+\\
+${\textbf{Definitie.}}$ Variabila aleatoare Z care ne da numarul de aruncari necesare pana pbtinem pentru a r-a oara succes de numeste Negativ Binomiala.\\
+\indent ${Z\sim NB(r,p)}$\\
+${\{r,r+1,..\}}$\\
+${k\geq r,\: \mathbb{P}(z=k)=\big( ^{k-1}_{r-1}\big)* (1-p)^(k-r)*p^r}$\\
+\\\\
+
+${\underline{Variabila \: aleatoare\: de\: tip\: Poisson}}$\\
+${\textbf{Definitie.}}$ Spunem ca o variabila aleatoare este repartizata Poisson de parametru $\lambda$ daca ${x\in\mathbb{N}}$ si ${\mathbb{P}(x=k)=e^{-\lambda}*\frac{\lambda^k}{k!}}$\\
+Cand se foloseste?\\
+${\sum_{k\geq 10}e^{-\lambda}*\frac{\lambda^k}{k!}=1?}$\\
+${e^x=\sum_{k\geq 0}\frac{x^k}{k!}}$\\
+\\\\\\
+${\underline{Functia\: de\: variabila\: aleatoare}}$\\
+${(\Omega,\textit{F},\mathbb{P})}$ camp de probabilitate , X si g variabile aleatoare atunci ${g\circ X}$ este o variabila aleatoare.\\
+${\textbf{Observatie.}}$ Daca X este discreta ${\Longrightarrow g\circ X}$ este o variabila aleatoare discreta.\\
+
+\subsection{Independenta}
+Doua variabile aleatoare X si Y sunt independente daca realizarea uneia nu influenteaza in niciun fel realizarea celeilalte.\\
+${\textbf{Definitie.}}$ Fie ${(\Omega,\textit{F},\mathbb{P})}$ un camp de probabilitate si X si Y doua variabile aleatoare. Spunem ca X si Y sunt independente, ${X\indep Y}$, daca evenimentele ${\{X=x\}}$ si ${\{Y=y\}}$ sunt independente ${\forall x,y}$\\
+
+${\textbf{P.}}$ Fie X si Y doua variabile aleatoare (discrete). Atunci ${X\indep Y}$ daca si numai daca \\
+\indent\indent ${\mathbb{P}(X\leq x,Y\leq y)=\mathbb{P}(X\leq x)*\mathbb{P}(Y\leq y),\: \forall x,y\in \mathbb{R}}$\\
+${\textbf{P.}\: X\indep Y \Leftrightarrow \mathbb{P}(X\in A,Y\in B\mathbb{P}(X\in A)*\mathbb{P}(Y \in B)\:,\forall A,B\subseteq\mathbb{R}(interval)}$\\
+${\textbf{P.}}$ Daca X si Y variabile aleatoare astfel incat ${X\indep Y}$ si g si h doua functii, atunci ${g(x)\indep h(y)}$\\
+${\textbf{Definitie.}\: X_1,X_2,..,X_n}$ sunt independente daca:\\
+${\mathbb{P}(X_1\leq x_1,X_2\leq x_2,..,X_n\leq x_n)=\mathbb{P}(X_1\leq x_1)*\mathbb{P}(X_2\leq x_2)*..*\mathbb{P}(X_n\leq x_n),\: \forall x_1,x_2,..,x_n\in \mathbb{R}}$\\
+
+\subsection{Media unei variabile aleatoare discrete}
+Repetam un experiment de N ori si ne interesam la valorile unei variabile aleatoare X de interes.\\
+${x_1,x_2,x_3,x_4,x_5,x_6,x_7,x_8}$\\
+1 \:  1 \:  1 \:  3\: \:  3 \:  5 \:  8 \:  8\\
+${m=\frac{x_1+x_2+..+x_N}{N}}$\\\\
+${\textbf{Definitie.}}$ Fie X o variabila aleatoare discreta. Se numeste media lui X valoarea\\
+\indent\indent ${\mathbb{E}[X]=\sum_x xf(x)=\sum_x x\mathbb{P}(X=x)}$\\
+ori de cate ori ${\sum_x |x|f(x)<\infty}$\\
+Daca ${|x|f(x)=\infty }$ atunci spunem ca X nu are medie.\\
+
+
+
+\section{Cursul 8}
+\subsection{Media si momentele de ordin superior}
+${\textit{Definitie.}}$ Fie ${(\Omega,\textit{F},\mathbb{P})}$ camp de probabilitate si ${X:\Omega\to\mathbb{R}}$ variabila aleatoare discreta, definim media variabilei aleatoare X:\\
+\indent\indent\indent\indent ${\mathbb{E}[X]=\sum_x x*\mathbb{P}(X=x)=\sum_x x*f(x)}$\\
+\indent\indent ori de cate ori ${\sum |x|*f(x)<\infty}$. In cazul in care seria este infinita atunci spunem ca variabila aleatoare X nu are medie.\\
+\subsubsection{Experiment 1}
+Aruncam cu un zar, X${\in \{1,2,3,4,5,6\}}$.\\
+\indent ${\mathbb{P}(X=x)= \frac{1}{6} }$\\
+\indent ${\mathbb{E}[X]=\sum x*\mathbb{P}(X=x)=1*\frac{1}{6}+2*\frac{1}{6}+...+6*\frac{1}{6}=3.5}$\\
+
+\subsubsection{Experimentul 2}
+${X\sim \big{(} {}_{p_1}^{x_1}\: _{p_2}^{x_2}\: ...\: _{p_n}^{x_n}\big{)}}$\\
+${\mathbb{E}[X]=x_1*p_1+x_2*p_2+...+x_n*p_n}$\\\\
+ex: ${X\sim \big{(} {}_{\frac{1}{2}}^{-1}\: _{\frac{1}{4}}^{0}\: _{\frac{1}{4}}^{1}\big{)}}$\\
+${\mathbb{E}[X]=-\frac{1}{2}+\frac{1}{4}=-\frac{1}{4}}$\\
+
+\subsection{Interpretare fizica.Proprietati.}
+\noindent 1) Daca X este constanta i.e. X=c ${\Longrightarrow \mathbb{E}[X]=c}$\\
+2) Daca X ${>}$ 0 atunci ${\mathbb{E}[X]\geq 0}$ (pozitivitate)\\
+3) Daca X ${>}$ Y atunci ${\mathbb{E}[X]\geq \mathbb{E}[Y]}$ (monotonie)\\
+4) (Liniaritate) Daca X si Y variabila aleatoare discreta si a,b${\in \mathbb{R}}$ atunci\\
+\indent\indent\indent ${\mathbb{E}[ax+by]=a*\mathbb{E}[x]+b*\mathbb{E}[y]}$\\
+5) (Legatura dintre medie si probabilitati)\\
+\indent Fie ${A\in \textit{F}}$ eveniment \\
+\indent ${\mathds{1}_A=\begin{cases}1 & \omega \in A \\0 & \omega \notin A\end{cases}}$\\
+\indent ${\mathbb{P}(\mathds{1}_A=1)=\mathbb{P}(A)}$\\
+\indent ${\mathds{1}_A \sim \big( {}^0_{1-\mathbb{P}(A)}\: \: ^1_{\mathbb{P}(A)}\big)}$\\
+6) Fie X variabila aleatoare discreta si ${g:\mathbb{R}\to\mathbb{R}}$\\
+\indent\indent\indent Y=g(x). Atunci ${\mathbb{E}[g(x)]=\sum_x g(x)*\mathbb{P}(X=x)}$\\
+7) Fie X,Y variabile aleatoare independente\\
+\indent\indent ${\mathbb{E}[x*y]=\mathbb{E}[x]*\mathbb{E}[y]}$\\
+\indent Daca g si h sunt 2 functii atunci g(x) si h(y) sunt independente.\\\\
+$\textbf{Definitie.}$ Fie X o varianta aleatoare discreta. Numim momentul de ordin k (${k\geq1}$) ${\mathbb{E}[(x-\mathbb{E}[x])^k]}$.\\
+${\textbf{Definitie.}}$ Varianta sau dispersia variantei aleatoare X este momentul centrat de ordin $\Omega$ si se noteaza cu Var(x)=${\mathbb{E}[(x-\mathbb{E}[x])^2]}$.\\
+$\textbf{Observatie.}$ Arata gradul de impartire a obs fata de medie.\\\\\\
+$\textbf{Experiment.}$\\
+${X_1\sim\big({^1_{1/5}\indent ^2_{1/5}\indent ^3_{1/5}\indent ^4_{1/5}\indent ^5_{1/5}}\big)}$\\
+${X_2\sim\big({^1_{1/{10}}\indent ^2_{1/{10}}\indent ^3_{1/{10}}\indent ^4_{1/{10}}\indent ^5_{1/{10}}}\big)}$\\
+${X_3\sim\big({^1_{1/2}\indent ^2_{0}\indent ^3_{0}\indent ^4_{0}\indent ^5_{1/2}}\big)}$\\
+${X_4\sim\big({^1_{0}\indent ^2_{0}\indent ^3_{1}\indent ^4_{0}\indent ^5_{0}}\big)}$\\
+${\mathbb{E}[x_1]=\mathbb{E}[x_2]=\mathbb{E}[x_3]=\mathbb{E}[x_4]=3}$\\
+${Var(X_1)=\mathbb{E}[(x_1-3)^2]=\frac{(1-3)^2}{5}+\frac{(2-3)^2}{5}+\frac{(3-3)^2}{5}+\frac{(4-3)^2}{5}+\frac{(5-3)^2}{5}=2}$\\
+${Var(X_2)=\mathbb{E}[(x_2 - 3)^2]=\frac{12}{10}}$\\
+${Var(X_3)=4}$\\
+${Var(X_4)=0}$\\\\\\
+\subsubsection{Proprietati}
+\noindent1) Daca X constant $\Longrightarrow$ Var(x)=0\\
+2) Var(x)$\geq$ 0 ${\textbf{!MEREU!}}$\\
+3) Daca X variabila aleatoare si a$\in$ $\mathbb{R}$ atunci Var(a+X)=Var(X)\\
+4) Daca X variabila aleatoare si b$\in \mathbb{R}^*$ atunci Var(bX) = $b^2$ Var(X)\\
+\indent Var(a+bX)=$b^2$ Var(X)\\
+5) Var(x)=${\mathbb{E}[x^2]-\mathbb{E}[x]^2}$\\
+6) X si Y independente $\in$ Var(X+Y)=Var(X)+Var(Y)\\
+\\\\
+$\textbf{Definitie.}$ Fie X si Y doua variabile aleatoare . Se numeste covarianta lui X si Y:\\
+\indent\indent\indent Cov(X,Y)=${\mathbb{E}[(x-\mathbb{E}[x])(y-\mathbb{E}[y])]}$\\
+In general proprietatea 6 este Var(X+Y)=Var(X)+Var(Y)+2Cov(X,Y)\\\\
+$\textbf{Definitie.}$ Se numeste abatere standard: SD(x)=$\sqrt{Var(x)}$\\
+$\sigma$ = Varianta\\
+$\sigma^2$ = Abatere standard\\
+
+\subsection{Exemple de calcul al mediei si variantei}
+\noindent 1) X $\sim$ B(p) , X ${\sim \big({^0_{1-p}\indent ^1_p}\big)}$\\
+\indent $\mathbb{E}$[X]=p\\
+\indent Var(X)=${\mathbb{E}[X^2]-\mathbb{E}[X]^2=p-p^2=p(1-p)}$\\\\
+2) ${X\sim B(n,p)}$\\
+\indent${\mathbb{P}(X=k)=\big({_k^n}\big)*p^k*(1-p)^{n-k}}$\\
+\indent ${\mathbb{E}[X]=\Sigma^n_{k=0}k*\mathbb{P}(X=k)=\Sigma^n_{k-0}k*\big({_k^n}\big)*p^k*(1-p)^{n-k}}$\\
+\indent ${\mathbb{E}[X]=\Sigma^n_{k=1}\frac{n!}{(k-1)!(n-k)!}*p^k*(1-p)^{n-k}=}$ ${n*p}$\\
+\indent X=${x_1+x_2+..+x_n}$\\
+\indent Var(X)=Var(${X_1+X_2+..+X_n}$)=${\Sigma^n_{i=1}Var(X_i)=n*p*(1-p)}$\\\\
+3) Hipergiometrica HG(n,N,M)\\
+\indent ${\mathbb{P}(X=k)=\frac{(^M_k)*(^{N-M}_{n-k})}{(^N_n)}}$\\
+\indent ex: $x_j$ la extragerea j avem bila neagra $x_j$=1, alba $x_j$=0\\
+\indent\indent X=${x_1+x_2+..+x_n}$\\ 
+\indent\indent extragere fara intoarcere\\
+\indent\indent ${\mathbb{E}[X]=\mathbb{E}[x_1]+..+\mathbb{E}[x_n]=n*\frac{M}{N}}$\\
+\indent\indent ${x_j\in\{0,1\}}$\\
+\indent\indent ${\mathbb{P}(x_j=1)=\frac{M}{N}}$\\\\
+4)${X\sim Pois(\Omega)}$\\
+\indent${\mathbb{P}(x=k)=e^{-\lambda}*\frac{\lambda^k}{k!}}$\\
+\indent${\mathbb{E}[X]=\Sigma_{k=0}^\infty k*\mathbb{P}(X=k)=\Sigma k * e^{-\lambda}*\frac{\lambda^k}{k!}=\lambda}$\\
+\indent ${Var(X)=\mathbb{E}[x^2]-\mathbb{E}[x]^2}$\\
+\indent ${\mathbb{E}[x^2]=\Sigma^\infty_{k=0} k^2*\mathbb{P}(x=k)=\Sigma k^2*e^{-\lambda}*\frac{\lambda^k}{k!}=\Sigma^\infty_{k=1} k*e^{-\lambda}*\frac{\lambda^k}{(k-1)!}}$ =${\lambda^2+\lambda}$\\
+\indent $\Longrightarrow $ Var(X)=$\lambda$\\\\
+5) X $\sim$ Geom(p)\\
+\indent ${X\sim\{1,2,..,n\}}$\\
+\indent ${\mathbb{P}(x=k)=(1-p)^{k-1}*p}$\\
+\indent ${\mathbb{E}[X]=\frac{1}{p}}$\\\\
+
+\subsection{Variabile aleatoare continue}
+$\textbf{Definitie.}$ Fie ($\Omega$,$\textit{F}$,$\mathbb{P}$) camp de probabilitate si x:${\Omega\to\mathbb{R}}$ o variabila aleatoare.\\
+\indent Variabila aleatoare X este continua (absolut continua) daca exista o functie f:${\mathbb{R}\to\mathbb{R}_+}$ cu proprietatea ca ${\mathbb{P}(x\in A)=\int_A f(x)dx, \forall A\subseteq\mathbb{R}}$\\
+\indent $\textbf{Observatie.}$ Daca A=(a,b), $\mathbb{P}(a<X<b)$ = $\int_a^b$ f(x)dx.\\
+\indent $\textbf{Observatie.}$ In definitia de mai sus f se numeste densitate de repartitie.\\
+\indent $\textbf{Propozitie.}$ Daca f este densitate de repartitie, atunci \\
+\indent\indent 1) f $\geq 0$\\
+\indent\indent 2) ${\int_\mathbb{R} f(x)dx=\int^\infty_{-\infty}f(x)dx=1}$\\\\
+\indent $\textbf{Observatie.}$ $\mathbb{P}$(x=a)=${\int_a^a f(x)dx=0}$\\
+\indent\indent\indent A=$\{a\}$\\
+\indent\indent\indent ${\mathbb{P}(a<X<b)=\mathbb{P}(a\leq X <b)=\mathbb{P}(a\leq X \leq b)=\mathbb{P}(a< X \leq b)}$\\\\
+
+\section{Curs 9}
+
+
+
+
+
+
+
+
+
+
+
+\section{Curs 10}
+\subsection{Repartitia normala}
+\noindent ${\varphi=\frac{e^{\frac{-x^2}{2}}}{\sqrt{2\pi}}}$\\
+${\phi (x)=\int_{-\infty}^x\varphi (t) dt}$\\
+${\varphi (x)=\varphi (-x)}$ (simetric fata de origine)\\
+$\varphi$ densitate\\
+1) ${\varphi(x) \geq 0}$\\
+2) ${\int_{-\infty}^{+\infty} \varphi (x) dx}$ = 1\\
+${X\sim N(0,1)}$ normala standard\\
+${\mathbb{E}[X]=\int_{-\infty}^{+\infty} \varphi (x) dx =\int_{-\infty}^{+\infty} \frac{x}{\sqrt{2\pi}}e^{\frac{-x^2}{2}}dx = 0}$ (functie impara)\\
+${Var(x)=\mathbb{E}[X^2]-\underbrace{\mathbb{E}[X]^2}_0}$\\
+${\mathbb{E}[X^2]=\int x^2 \varphi(x) dx = 1\Longrightarrow Var(X)=1}$\\
+Daca X${\sim N(0,1)}$ atunci $\mathbb{E}[X]=0$ si Var(X)=1\\
+${\phi(x)=1-\phi(-x)}$\\\\
+$\textbf{Definitie.}$ Spunem ca X $\sim$ N(${\mu,\sigma^2}$) daca admite densitate de repartitie:\\
+\indent\indent ${f(x)=\frac{1}{\sqrt{2\pi}}e^{\frac{-(x-\mu)^2}{2\sigma^2}}, \: x\in\mathbb{R}}$\\
+$\textbf{Propozitie.}$ Daca X $\sim$ N($\mu,\sigma^2$) atunci $\exists$ Z$\sim$ N(0,1) astfel incat\\
+\indent\indent\indent X = $\mu$ + $\sigma$Z\\
+X$\sim N(\underbrace{\mu}_{media},\underbrace{\sigma^2}_{variatia})$\\
+${\mathbb{E}[X]=\mathbb{E}[\mu + \sigma Z]=\mu +\sigma \mathbb{E}[Z]=\mu}$\\
+Z$\sim$N(2,1)\\
+Var(X)=Var($\mu +\sigma Z)=\sigma^2 Var(Z)=\sigma^2 $\\
+F(x)=${\mathbb{P}(X\leq x)=\mathbb{P}(\mu +\sigma Z \leq x)=\mathbb{P}(Z\leq \frac{x-\mu}{\sigma})=\phi (\frac{x-\mu}{\sigma})}$\\
+f(x)=${\frac{d}{dx} F(x) =\frac{d}{dx}\phi(\frac{x-\mu}{\sigma})=\varphi(\frac{x-\mu}{\sigma})* \frac{1}{\sigma}}$\\
+${(f\circ g)' = f'(g)* g'}$\\\\
+$\textbf{Proprietatea 68-95-99,7\%}$\\
+Daca X$\sim\: N(\mu,\sigma^2)$ atunci\\
+\indent ${\mathbb{P}(|X-\mu|\leq\sigma)\simeq68\%}$\\
+\indent ${\mathbb{P}(|X-\mu|\leq 2\sigma)\simeq95\%}$\\
+\indent ${\mathbb{P}(|X-\mu|\leq 3\sigma)\simeq99,7\%}$\\
+\subsection{Repartitii comune, marginale si conditionate}
+X, Y doua variabile aleatoare (${\Omega,\textit{F},\mathbb{P}}$)\\
+${\mathbb{P}((x,y)\in A \times B)}$\\
+${\mathbb{P}(X\in A)\: sau\: \mathbb{P}(Y\in B)}$\\
+${\mathbb{P}(X\in A|Y\in B)}$\\
+\\
+$\underline{Cazul\: discret}$ \\
+ Fie ($\Omega,\textit{F},\mathbb{P}$) camp de probabilitate si X:$\Omega\to\mathbb{R},Y:\Omega\to\mathbb{R},$\\
+ X($\Omega$) =$\{x_1,x_2,..,x_m\}$\\
+ Y($\Omega$) =$\{y_1,y_2,..,y_n\}$\\
+ Perechea (X,Y):$\Omega\to\mathbb{R}^2$\\
+ (X,Y)($\Omega$)=$\{(x_i,y_i)|i=\overline{1,m},j=\overline{1,n}\}\to \: m*n \: valori$\\
+ \\
+ $\underline{Functia \: de\: masa\: a \: (X,Y)}$\\
+ $f_{XY}(x,y)=\mathbb{P}(X=x,Y=y),\forall x\in\{x_1,..,x_m\},y\in\{y_1,..,y_n\}$\\
+ \\
+ $\underline{Proprietati}$\\
+ a) $f_{XY}(x,y)\geq 0 ,\forall x,y$\\
+ b) $\sum_{x\in X(\Omega)}\sum_{y\in Y(\Omega) }f_{XY}(x,y)=1$\\
+ \indent $A\subset \mathbb{R}$\\
+ \indent $B\subset \mathbb{R}$\\
+ \indent $\mathbb{P}((X,Y)\in A\times B)=\sum_{x\in X(\Omega)}\sum_{y\in Y(\Omega) }f_{XY}(x,y)$\\
+ $f_x (x)=\sum_y f_{xy}(x,y)$ (functia de masa a lui X, repartitia marginala a lui X)\\
+ $f_y (y)=\sum_x f_{xy}(x,y)$ (functia de masa a lui Y, repartitia marginala a lui Y)\\
+ Fie X o variabila aleatoare discreta si $A\in\textit{F},\mathbb{P}(A)> 0$\\
+ \indent $\mathbb{P}(X=x|A)=\frac{\mathbb{P}(\{X=x\}\cap A)}{\mathbb{P}(A)}$\\
+ Daca A = $\{Y=y\}$ atunci $\mathbb{P}(X=x|Y=y)=\frac{\mathbb{P}(X=x,Y=y)}{\mathbb{P}(Y=y)}=\frac{f_{x|y}(x,y)}{f_y (y)}$ (functia de masa conditionata a lui X la Y)\\
+ \subsection{Formula probabilitatii totale}
+ \noindent $B,A_1,A_2,..,A_n\in\textit{F}$\\
+ $A_1,A_2,..,A_n$ formeaza o partitie pe $\Omega$\\
+ $\mathbb{P}(B)=\sum^n_{i=1}\mathbb{P}(B|A_i)*\mathbb{P}(A_i)$\\
+ Daca B={x=x}$\Longrightarrow \mathbb{P}(X=x)=\sum^n_{i=1}\mathbb{P}(X=x|A_i)*\mathbb{P}(A_i)$\\
+ $A_i=\{Y=y_i\}\Longrightarrow \mathbb{P}(X=x)=\sum^n_{i=1}\mathbb{P}(X=x|Y=y_i)*\mathbb{P}(Y=y_i)$\\
+ $f_x(x)=\sum^n_{i=1}f_{x|y} (x|y_i)f_y(y_i)$\\
+ $\mathbb{P}(A\cap B)=\mathbb{P}(A)*\mathbb{P}(B|A)=\mathbb{P}(B)*\mathbb{P}(A|B)$\\
+ A=$\{X=x\},\: B=\{Y=y\}$\\
+ $\mathbb{P}(X=x,Y=y)=\mathbb{P}(X=x)*\mathbb{P}(Y=y|X=x)=\mathbb{P}(Y=y)*\mathbb{P}(X=x|Y=y)$\\
+ $f_{x,y}(x,y)=f_x(x)*f_{y|x}(y|x)=f_y(y)*f_{x|y}f(x|y)$\\
+
+\subsection{Formula lui Bayes}
+$\mathbb{P}(X=x|Y=y)=\frac{\mathbb{P}(X=x,Y=y)}{\mathbb{P}(Y=y)}=\frac{\mathbb{P}(X=x)*\mathbb{P}(Y=y|X=x)}{\sum \mathbb{P}(X=x)\mathbb{P}(Y=y|X=x)}$\\
+$f_{x|y}(x|y)=\frac{f_x(x)* f_{y|x}(y|x)}{\sum_{x!} f_x (x!) f_{y|x} (y|x!)}$\\
+
+\subsection{Media unei functii de v.a.}
+X$\sim X:\Omega\to\mathbb{R},g:\mathbb{R}\to\mathbb{R}$\\
+$\mathbb{E}[g(x)]=\sum_x g(x) \mathbb{P}(X=x)$\\
+$X,Y:\Omega\to\mathbb{R}, g:\mathbb{R}^2\to\mathbb{R}$\\
+$\mathbb{E}[g(x,y)]=\sum g(x,y)*\mathbb{P}(X=x,Y=y)$\\
+\\
+Ex: X,Y\\
+\indent$\mathbb{E}[XY]=\sum_{x,y} xy\mathbb{P}(X=x,Y=y)$\\
+
+\section{Curs 11}
+
+\section{Curs 12}
+a) Cazul discret\\
+\indent X Y v.a discrete, $ X \in\{x_1,..,x_n\}$
+\indent\ $ Y \in\{y_1,..,y_n\}$\\
+\indent $ f_{x,y}(x,y) = \mathbb{P}(X=x, Y=y)$\ repartitie comuna\\
+\indent $ f_x(x)= \mathbb{P}(X=x)= \sum_y f_x(x,y) $\ repartitie marginala\\
+\indent $ f_y(y)= \mathbb{P}(Y=y)= \sum_x f_{x,y}(x,y) $\ repartitie marginala\\
+\subsection{Repartitia conditionata}
+\indent $ f_{x|y}(x|y) =\mathbb{P}(X=x|Y=y)= \frac{f_{x,y}(x,y)}{f_y(y)}$\\
+\indent $ f_{y|x}(y|x) =\mathbb{P}(Y=y|X=x)= \frac{f_{x,y}(x,y)}{f_x(x)}$\\
+\subsection{Media conditionata}
+\indent Daca X v.a discreta si $A \in Y,\mathbb{P}(A)\ge 0$ atunci am vazut ca $f_{X|A}(x)=\mathbb{P}(X=x|A)$\\
+\indent Media conditionata a lui X la A: $\mathbb{E}{[X|A]}=\sum_x x\mathbb{P}(X=x|A)=\sum_x  x f_{X|A}(x) $ \\
+\indent Daca g este o functie atunci g(x) este o v.a discreta si $\mathbb{E}{[g(x)|A]} = \sum_x g(x) f_{x|A}(x)$ \\
+\indent Daca A = $\{Y=y\}$ atunci 
+$\underline{\mathbb{E}{[X|Y=y]} = \sum_x x f_{x|y}(x|y)} $ (media conditionata a lui x la y)\\
+\indent Experiment\\
+
+\begin{tabularx}{0.8\textwidth} { 
+  | >{\raggedright\arraybackslash}X 
+  | >{\centering\arraybackslash}X 
+  | >{\raggedleft\arraybackslash}X 
+  | >{\centering\arraybackslash}X 
+  | >{\centering\arraybackslash}X |}
+ \hline
+ x/y & -1 & 0 & 2 & $\sum$ \\
+ \hline
+1 &  1/18 & 3/18  & 2/18 & 6/18  \\
+\hline
+2 & 2/18 & 0 & 3/18 & 5/18  \\
+\hline
+3 & 0 &  4/18 & 3/18 & 7/18  \\
+\hline
+$\sum$ & 3/18 & 7/18  & 8/18 & 1  \\
+\hline
+\end{tabularx}\\ \\ \\
+${X\sim\bigg({^1_{6/18}\indent ^2_{5/18}\indent ^3_{7/18}}\bigg)}$\\
+${Y\sim\bigg({^{-1}_{3/18}\indent ^0_{7/18}\indent ^2_{8/18}}\bigg)}$\\
+${X|Y{=}0\sim\bigg({^1_{\frac{3/18}{7/18}}\indent ^2_{0}\indent ^3_{\frac{4/18}{8/18}}}\bigg)}$=${\bigg({^1_{3/7}\indent ^2_{0}\indent ^3_{4/7}}\bigg)}$\\
+
+$\mathbb{E}{[X|Y=0]}=1\cdot\frac{3}{7}+2\cdot0+3\cdot\frac{4}{7}=\frac{15}{7}$\\ \\
+X|Y = -1${\sim\bigg({^1_{\frac{1/18}{3/18}}\indent ^2_{\frac{2/18}{3/18}}\indent ^3_{0}\bigg)}}$ = ${\bigg({^1_{1/3}\indent ^2_{2/3}\indent ^3_{0}\bigg)}}$\\ \\
+$\mathbb{E}{[X|Y=-1]}=1\cdot\frac{1}{3}+3\cdot\frac{2}{3}+3\cdot0=\frac{5}{3} $\\
+Analog  X|Y = 2 ${\sim\bigg({^1_{2/8}\indent ^2_{3/8}\indent ^3_{3/8}}\bigg)}$\\\\
+$\mathbb{E}{[X|Y=2]}=1\cdot\frac{2}{8}+2\cdot\frac{3}{8}+3\cdot\frac{3}{8}=\frac{17}{8}$ \\\\
+\indent Daca X si Y sunt v.a discrete atunci  $\mathbb{E}{[X]} = \sum\mathbb{E}{[X|Y=y]} y \circ\mathbb{P}{(Y=y)} $\\\\
+$\mathbb{E}{[X|Y=y]}=\sum_x {x f_{x|y}{(x,y)}},  f_{x|y}{(x|y)} = \frac{f_{x,y}{(x,y)}}{f_y{y}}$\\\\
+$\sum_y \sum_x {x f_{x|y}}{(x|y)}\cdot f_y {(y)}=\sum_y \sum_x xf_{x,y}(x,y)=\underbrace{\sum_x x\sum_y f_{x,y}{(x,y)}}_\text{$f_x{(x)}$}=\mathbb{E}{[X]}$\\\\
+\indent\textbf{Definitie} 
+Fie X si Y doua v.a discrete. Se numeste media conditionata a lui X la Y si se not $\mathbb{E}{[X|Y]}$, v.a de forma $h{(y)}$ pentru care $h{(y)}=\sum{[X|Y=y]},\forall y $
+\indent\textbf{Experiment}\\
+Am vazut ca  $\mathbb{E}{[X|Y=-1]}=\frac{5}{3}$\\
+\indent\indent\indent\indent\ $\mathbb{E}{[X|Y=0]}=\frac{15}{7}$\\
+\indent\indent\indent\indent\ $\mathbb{E}{[X|Y=2]}=\frac{17}{8}$\\
+$\mathbb{E}{[X|Y]}=h(y)$ Ce valori ia aceasta v.a? $h(y) =\mathbb{E}{[X|Y=y]}$\\
+$\mathbb{E}{[X|Y]}{\sim\bigg({^{5/3}_{\mathbb{P}{(Y=-1)}}\indent ^{15/7}_{\mathbb{P}{(Y=0)}}\indent ^{17/8}_{\mathbb{P}{(Y=2)}}}\bigg)}={\bigg({^{5/3}_{3/18}\indent ^{15/7}_{7/18}\indent ^{17/8}_{8/18}\bigg)}}$\\
+$\mathbb{E}{[{\mathbb{E}[{X|Y}]}]}= \frac{5}{3}\cdot\frac{3}{18}+\frac{15}{7}\cdot\frac{7}{18}+\frac{17}{8}\cdot\frac{8}{18}=\frac{5+15+17}{18}=\frac{37}{18}=\mathbb{E}{[X]}$\\
+$\mathbb{E}{[X]}=\frac{6+10+21}{18}=\frac{37}{18}$\\
+\textbf{Media mediei conditionate este} $\mathbb{E}{[{\mathbb{E}[{X|Y}]}]}=\mathbb{E}[{x]}$ \\
+$\mathbb{E}{[X|Y]}{\sim\bigg({^{\mathbb{E}{[X|Y=y]}}_{\mathbb{P}{(Y=y_{1})}}\indent ^{...}_{...}}\indent ^{\mathbb{E}{[X|Y=y_n]}}_{\mathbb{P}{(Y=y_n)}}}\bigg)$\\
+\underline{Observatie} Var(X|A)=$\mathbb{E}{[(X-\mathbb{E}{[X|A]})^2|A]}=\mathbb{E}{[x^2|A]}-(\mathbb{E}{[X|A]})^2$ \\
+Var(X|Y=y)=$\mathbb{E}{[X^2|Y=y]}-\mathbb{E}{[X|Y=y]}^2$
+b) Cazul v.a continue: repartitia comuna, repartitia marginala, repartitia conditionata\\
+\textbf{Definitie} Fie ($\Omega,{\textit{F}},\mathbb{P}$) c.p si X,Y doua v.a const. Spunem ca vectorul (X,Y) formeaza o pereche de v.a continue daca exista o functie $f_{(x,y)}{(x,y)}\geq 0 $ c prop:\\
+$\mathbb{P}{((x,y)\in A)} = \int\int\limits_A f_{(x,y)}{(x,y)}dxdy, \forall A \in \mathbb{R^2}$\\
+\includegraphics[width=90mm]{c12_p1.png}\\\\
+\includegraphics[width=90mm]{c12_p2.png}\\\\
+Functia $f_{(x,y)}{(x,y)}:\mathbb{R}^2 ->\mathbb{R}$ se numeste densitatea comuna a (x,y)\\
+Daca  A=[a,b]x[c,d]\\
+$\mathbb{P}{((X,Y)\in[a,b]x[c,d])}=\mathbb{P}{(a\leq x\leq b, c\leq y\leq d)} = \int \limits_A\int f_(x,y)(x,y) dxdy= \int \limits_a^b\int \limits _c^d f_{(x,y)}(x,y) dydx $
+Daca A=$\mathbb{R}^2$ atunci $\mathbb{P}{((x,y)\in\mathbb{R}^2)} =\int \int \limits_{\mathbb{R}^2} f_{(x,y)}{(x,y)}dxdy =1$\\
+$f_{(x,y)}$ este desitate  $ a)  f_{(x,y)}\geq 0 $\\
+\indent\indent\indent\indent\indent b)$\int\int f_{(x,y)}{(x,y)}dxdy=1$\\\\
+Interpretare
+$f_{(x,y)}{(x,y)}$\\
+\includegraphics[width=90mm]{c12_p3.png}\\\\
+$\mathbb{P}{(X\in (x,x+dx), y\in (y,y+dy))}=\int_x^{x+dx}\int_y^{y+dy} f_{(x,y)}{(u,v)}dvuv$\\
+$dx,dy \to  0 f_{(x,y)}{(x,y)}dxdy$\\
+$f_{(x,y)}{(x,y)}\sim \frac{\mathbb{P}{X\in (x,x+dx), Y\in (y,y+dy)}}{dxdy}\sim \frac{probabilitatea}{unitatea de arie}$\\
+\textbf{Observatie} Daca stim $ f_{(x,y)}{(x,y)}$ atunci putem calcula price probabilitate de tipul $ \mathbb{P}{(X\in A, Y\in B)}$\\
+Vrem sa calculam $\mathbb{P}{x\in A} = \mathbb{P}{(x\in A,y\in \mathbb{R})}=\int_A\int_{\mathbb{R}}f_{(x,y)}{(x,y)}dxdy$\\
+Presupunem ca X si Y v.a continua cu densitatile $f_x$, respectiv $f_y$=$\mathbb{P}{(X\in A)}=\int _A f_x {(x)}$\\
+Avem $\int_A f_x {(x)} dx = \int_A\int_\mathbb{R}f_{x,y}{(x,y)}dydx$\\
+$f_x{(x)}=\int_\mathbb{R}f_{(x,y)}{(x,y)}dy$ desitatea marginala a lui X\\
+Similar $f_y{(y)}=\int_\mathbb{R}f_{(x,y)}{(x,y)}dx$ desnitatea marginala a lui y\\
+\textbf{Cazul discret} \thickspace\thickspace\thickspace\thickspace\thickspace\textbf{Cazul continuu}\\
+$f_{(x,y)}{(x,y)}=\mathbb{P}{(X=x, Y=y)}$\thickspace\thickspace\thickspace\thickspace\thickspace
+$f_{(x,y)}{(x,y)}$\\
+\underline{Repartitie uniforma pe S$\subseteq \mathbb{R}^2$} \\
+Presupunem S$\subseteq\mathbb{R}^2 marginita$ (triunghi,dreptunghi,..)\\
+$(X,y)\sim  \mu(S) daca\exists f_{(x,y)}{(x,y)}\geq 0$ \\
+$f_{(x,y)} {(x,y)} = \Biggl\{ {c, (x,y) \in S \indent\indent 0,altfel}$\\ 
+Cum $f_{(x,y)}$ este densitate rezulta c $\geq$ 0 si\\
+$\int\int \limits _{\mathbb{R}^2} f_{(x,y)x,y}{(x,y)}dxdy=1 \Rightarrow \int\int \limits _{\mathbb{R}^2} c\cdot 1_s (x,y)dxdy=1 $\\
+$c=\frac{1}{\int \int dxdy}=\frac{1}{Aria(A)}$\\
+S=[a,b]$\times$[c,d]\\
+$(X,y)\sim  \mu(S) daca\exists f_{(x,y)}{(x,y)}\geq 0$ \\
+$f_{(x,y)} {(x,y)} = \Biggl\{ {\frac{1}{\int \int_{\mathbb{R}}} \ (x,y) \in S \indent\indent 0,altfel}$\\ 
+\underline{Problema acului lui Buffon}\\
+O suprafata marcata cu linii paralele aflate la distanta d una fata de celelalte.
+Presupunem ca aruncam cu un ac de lungime l<d. Care este probabilitatea ca acum sa intersecteze una dintre linii?
+$\Theta- unghiul ascutit format de ac cu dreapta$\\
+X - distanta de la mijlocul acului la cea mai apropriata dreapta\\
+$(X,\Theta)\sim U(S), S=\{(X, \Theta)| 0\leq \Theta\leq\frac{u}{2}, 0\leq x\leq d/2 \}$\\
+Conditia ca acul sa intersecteze o linie:\\
+$x\leq \frac{l/2}{sin\Theta}$\\
+Vrem sa calculam $\mathbb{P}{(X\leq l/2 sin\Theta)}$\\
+\underline{Functia de repartitie(X,Y)}\\
+$\mathbb{F}{(x,y)}{(x,y)}=\mathbb{P}{(X\leq x, Y \leq y)} = \int\limits_{-\infty}^x\int \limits_{-\infty}^y f_{(x,y)}(u,v) dvdu$\\
+\subsection{Repartitii conditionate}
+Fie $(\Omega, \textit{F}, \mathbb{P})$ un c.p., X o v.a. continua si un A $\in \textit{F}\: cu\: \mathbb{P}(A)\geq 0 $\\
+Definim densitatea conditionata a lui X la A, $f_{(x|A)}{x}$, functia $f_{x|A} \geq 0 $ care verifica \\
+$\mathbb{P}{(x\in B|A)}= S_B f_{x|A}{x} dx \forall B \subseteq \mathbb{R}$\\
+\textbf{Observatie} \\
+In locul lui A consideram ev $\{ x\in A \}$ astefel incat $\mathbb{P}{(X\in A)}\ge 0$\\
+$\mathbb{P}{(x\in B|x\in A)}=\frac{\mathbb{P}{(x\in b, x \in A})}{\mathbb{P}{x\in A}}=\frac{\mathbb{P}{(x\in A \cap B)}}{\mathbb{P}{(x \in A)}}$\\\\
+$\underline{\int \limits _ {A\cap B}f dx = \int f \cdot 1_{A\cap B}{(x)} dx = \int\limits_B f(x)\cdot 1_A {(x)}dx}$\\
+\subsection{Formula probabilitatii totale}
+$Fie A_1, A_2,.., A_n \in \textit{F} $ care sa formeze o partitie pe $\Omega si B \in \textit{F} atunci \mathbb{P} = \sum \limits_{i=1}^n \mathbb{P}{(B|A_i)}\cdot \mathbb{P}{A_i}$\\
+Daca $B=\{X\leq x\}$atunci X v.a cont fx densitate\\
+$\mathbb{P}{X \leq x} = \sum \limits_{i=1}^{n}\mathbb{P}{X \leq x| A_i}\cdot \mathbb{P}{A_i} =$
+$\int \limits_{-\infty}^{x} f_x{(t)} dt = \int \limits _{-\infty}^{f_{x|A_i}}\cdot \mathbb{P}{(A_i)}$\\
+\textbf{Observatie}\\ $A\in\textit{F}, \mathbb{P}{(A)}\ge 0$ X va cont $f_x{(x)}\\ f_x{x}=f_{x|A}\mathbb{P}{(A)}+ F_{x|A^C}{(x)}\cdot\mathbb{P}{(A^C)}$\\
+\textbf{Experiment:}\\
+Presupunem ca metroul circula la intervalul de 15 minute incepand la ora 5 am, Presupunem ca ajungem in statie in intervalul 7-7:30 in mod aleator (uniform pe acest interval). Ne propunem sa determinam rep. timpului de astepare pana la sosirea primului metrou.\\
+Solutie: Fie Y- timpul de asteptare pana la sesiunea primului metrou. Vrem sa determinam densitatea a lui Y, $f_y$ . Fie X timupul de sosire in statie $\textit{U}[7^{10}-7^{30}]$\\
+$A=\{  7^{10}\leq x \leq 7^{15}\}$-- Urcam in metrou la 7:15\\
+$B=\{  7^{15}\leq x \leq 7^{30}\}$-- Urcam in metrou la 7:30\\
+$f_y{(y)} = f_{Y|A}{(y)}\cdot \mathbb{P}{(A)}+ f_{y|B}{(y)}\cdot  \mathbb{P}{(B)}$\\
+$\mathbb{P}{(B)}= \frac{15}{20}=\frac{3}{4}$\\
+$f_Y{(y)}=f_{y|A}{(y)}\cdot \frac{1}{4}+f_{y|B}{(y)}\cdot \frac{3}{4}$\\
+$f_{Y|A}{(y)}=\frac{1}{5}, 0\leq y\leq 5$\\
+$f_{Y|B}{(y)}=\frac{1}{15}, 0\leq y\leq 15$\\
+$f_{Y}{(y)}=f_{Y|A}{(y)}* \mathbb{P}{(A)} + f_{Y|B}{(Y)}* \mathbb{P}{(B)} = \frac{1}{5}* 1_{[0,5]}{(y)}* \frac{1}{4}+\frac{1}{15}* 1_{[0,15]}{(y)} = \frac{3}{4}$ \\
+$\frac{1}{10}, 0\leq y\leq 5$\\
+$\frac{1}{20}, 5\leq y\leq 15$\\
+\section{Curs 13}
+\subsection{Independeta v.a}
+$x \perp y$\\
+$\mathbb{P}{(x\in A, Y\in B)}=\mathbb{P}{(x\in A)}\cdot \mathbb{P}{(y\in B)}, \forall A,B \subseteq \mathbb{R}$\\
+$A={(-\infty,x]}$\\
+$B={(-\infty,y]}$\\
+ $\mathbb{P}{(X\leq x, Y\leq y)}=\mathbb{P}{(X\leq x)* \mathbb{P}{(Y\leq y)}} \forall x,y $ \\
+ $\int \limits_{-\infty}^x\int \limits_{-\infty}^y f_{(x,y)}{(u,v)}dvdu = \int \limits_{-\infty}^xf_{x}{(u)}du\int \limits_{-\infty}^yf_{x}{(v)}dv$\\
+ Derivam dupa y si x\\
+ $\frac{\partial^2}{\partial x \partial y} \int \limits_{-\infty}^x\int \limits_{-\infty}^y f_{(x,y)}{(u,v)}dvdu= f_{(x,y)}{(x,y)}=f_{x}{(x)}f_{y}{(y)}$ \\\\
+ $\textbf{P}$ Fie X si Y v.a cu densitate fx si repartitia fy.
+ Atunci x$\perp \let\gets\leftarrow f_{(x,y)}{(x,y)}=f_{x}{(x)}f_{y}{(y)}$\\\\
+ $\textbf{P}$ Fie X si Y 2 va si g si h 2 fete.Daca 
+ $f_{(x|y)}{(x|y)}=g{(x)}\cdot h{(y)} \forall x,y\; atunci\; x \perp y $\\\\
+ $\textbf{P}$ Daca X si Y sunt 2 v.a independente $\mathbb{E}{[g(x)\cdot h(y)]} =\mathbb{E}{[g(x)]}\cdot \mathbb{E}{[h(y)]}$\\
+ \textbf{Formula lui Bayes}\\
+ X Y v.a continua\\
+ $f_{x|y}{(x,y)}=f_{x|y}{(x|y)f_{y}{y}}=
+ \frac{f_{x,y}{(x,y)}}{f_{y}{(y)}}=
+ \frac{f_{y|x}{(y|x)}f_{x}{(x)}}{f_{y}{(y)}}=
+ \frac{f_{y|x}{(y|x)}* f_{x}{(x)}}{\int f_{y|x}{(y|x')}* f_{x}{x'}* dx'}$\\
+ \textbf{Experiment} A Si B durata de viata pt telefonul din firma A este Exp($\alpha_0$), B Exp($\alpha_1$)\\
+ Presupunem ca primim un telefon de la A cu prob P0 si de la B cu P1 = 1-P0\\
+ Fie T durata de viata a telefonului primit\\
+ a) functia de repartitie si densitatea lui T\\
+ b) Probabilitatea ca telefonul sa fi provenit de la B stiind ca T=t\\
+ T v.a continua Fie I v.a 0,  telefon produs de A; 1, telefon produs de B\\
+ $\mathbb{P}{(I=0)}=p0$\\
+ $\mathbb{P}{(I=1)}=p1 = 1-p0$\\
+ T|I =0 $\sim Exp{(\alpha_0)}$\\
+ T|I =1 $\sim Exp{(\alpha_1)}$\\
+ $\mathbb{P}{(T\leq t)}=\mathbb{P}{(T \leq t | I=0)}\cdot \mathbb{P}{(I=0)}+\mathbb{P}{T\leq t | I=1}\cdot \mathbb{P}{(I=1)}$\\
+ \subsection{Media unei functii de v.a}
+ X si Y doua v.a $f_{x,y}{(x,y)} si \;g:\mathbb{R}^2 \to \mathbb{R}$\\
+ $\mathbb{E}{[g(x,y)]}=\int\int g{(x,y)}\cdot f_{x,y}{(x,y)} dxdy$\\ 
+ In particular,\\
+$\mathbb{E}{[xy]}=\int\int xy f_{x,y}{(x,y)}dxdy$\\
+\subsection{Media conditionata}
+X v.a continua si A un ev P(A)$ > $0
+$\mathbb{E}{[X|A]}=\int x f_{x|A}{(x)}dx$\\
+Daca A=$\{Y=y\}$\\
+$\mathbb{E}{[X|Y=y]}=\int x f_{x|y}{(x,y)}$dx\\
+\subsection{Formula probabilitatii totale}
+$f_{x}{(x)} = \sum \lim_{i=1}^{n} f_{x|A_i}{(x)} * \mathbb{P}{(A_i)}$\\
+$\mathbb{E}{[X]} = \sum \lim_{i=1}^{n} \mathbb{E}{[X|A]}* \mathbb{P}{(A_i)}$\\
+$\mathbb{E}{[X]} = \int \mathbb{E}{[X|Y=y]}f_{y}{(y)} dy$\\
+\underline{Definitie} \\
+Fie g(y) =$\mathbb{E}{[X|Y=y]}$. Atunci v.a $\mathbb{E}{[X|Y]}=g(y)$\\
+\underline{Proprietate}\\
+a) $\mathbb{E}{[\mathbb{E}{[X|Y]}]} = \mathbb{E}{[x]}$\\
+$Var(X)= Var(\mathbb{E}{[X|Y]}+\mathbb{E}{[Var(x|y)]})$\\
+N clienti \\
+$X_1,X_2 \cdots $ sumele pe care le-au achitat\\
+$T=X_1+X_2+\cdots X_\lambda$\\
+$N(\omega_1)=10$\\
+$T(\omega_1) = X_1(\omega_1)+\cdots X_{10} (\omega_1)$\\
+\subsection{Covarianta si corelatie}
+$\textbf{Definitie.}$
+Fie X si Y doua v.a se numesc covariante dintre X si Y\\
+$Cov(X,Y) =\mathbb{E}{[(X-\mathbb{E}{[X]})(Y-\mathbb{E}{[Y]})]}$\\
+Convarianta este $\mathbb{E}{[XY]}-\mathbb{E}{[X]}\cdot\mathbb{E}{[Y]}$\\
+$\textbf {Definitie}$\\
+Spunem ca X si Y sunt necorelate daca convarianta lor este 0
+Daca $X\perp Y \Rightarrow $ X si Y sunt necorelate\\
+$\textbf{Proprietati.}$//
+a) Cov(X,X) = Var(X)\\
+b) Cov(X,a) =0 , a const\\
+c) Cov(a+bx, y)=b Cov(X,Y)\\
+d) Cov(X,Y) = Cov(Y,X)\\
+e) Var(X+Y)=Var(X)+Var(Y)+2Cov(X,Y)\\
+$Var(x_1 \cdots x_n)=\sum\limits _{i=1} Var(xi)+2\sum \limits_{i<j}Cov(xi, xj) $\\
+f) Cov(x+y,z)=Cov(x,z)+Cov(y,z)\\
+$\textbf {Definitie}$\\
+Fie X si Y doua v.a si definim coeficientul de corelatie dintre X si Y\\
+$\rho(X,Y) = \frac{Cov(X,Y)}{Var(X)\sqrt{Var(Y)}} $ \\\\
+\includegraphics[width=90mm]{c113_p1.png}\\
+$\rho>0(stanga ) \;\;rho<0(dreapta)$\\
+\includegraphics[width=90mm]{c13_p2.png}\\
+$\rho=0(independent) \;\;\;\;\;\;\;\;\;\rho=0$\\\\
+$\textbf {Proprietate}$\\
+$\rho \in {[-1,1]} Daca \;\rho=1 \;sau \;\rho=-1 \;atunci$\\
+$X=a+by \; (y=a+bx) as. \mathbb{P}{(X=a+by)=1}$
+\subsection{Inegalitati si termeni limita}
+\textbf {Inegalitatea Cauchy Schwartz}\\
+Fie X si Y v.a cu Var(x)$<\infty$, Atunci\\
+$|\mathbb{E}{[XY]}\leq \sqrt{\mathbb{E}{[x^2]}\mathbb{E}{[y^2]}}$\\
+a) Functia convexa\\
+\textbf {Inegalitatea lui Jensen}\\
+\includegraphics[width=58mm]{c13_p3.png}\\
+Fie X v.a pozitiva. Atunci\\
+$\mathbb{P}{(X\geq a )}\leq \frac{\mathbb{E}{[X]}}{a} $
+
+
+
+\section{Curs 14}
+\subsection{Inegalitati}
+\noindent1) $\textbf{Cauchy-Schwartz:}$ ${\mathbb{E}[|XY|]\leq\sqrt{\mathbb{E}[X^2]*\mathbb{E}[Y^2]}}$\\
+2) $\textbf{Jensen:}$\\
+\indent$\varphi$ convexa : $\mathbb{E}[\varphi(x)]\geq\varphi(\mathbb{E}[X])$\\
+\indent$\varphi$ concava : $\mathbb{E}[\varphi(x)]\leq\varphi(\mathbb{E}[X])$\\
+3) $\textbf{Marcov :}$\\
+\indent $ X>0, \: a>0$\\
+\indent $\mathbb{P}(X>a)\leq\frac{\mathbb{E}[X]}{a}$\\
+4) $\textbf{Cebîșev:}$\\
+\indent X v.a. $\mathbb{E}[X]=\mu,\: Var(x)=\sigma^2$\\
+\indent\indent $\mathbb{P}((X-\mu)\geq a)\leq\frac{Var(X)}{a^2},\: a>0$\\
+5) $\textbf{Chernoff:}$\\
+\indent X v.a. , $a>0,\: t>0$ atunci $\mathbb{P}(X\geq a)\leq \frac{\mathbb{E}[e^{tx}]}{e^{ta}}$\\
+
+\subsection{Teoreme limite}
+$\textbf{Definitie}$. Fie $(X_n)_{n\geq 1}$ un sir de v.a. si X o v.a peste
+($\Omega,\textit{F},\mathbb{P}$).Spunem ca $(X_n)_n$ converge la X aproape sigur si notam $X_n \xrightarrow{a.s.} X$ daca :\\
+\indent\indent ${\mathbb{P}(lim_n X_n=X)=1}$\\
+\indent ${A=\{\omega\in\Omega|\lim_n X_n(\omega)=X(\omega)\}}$\\\\
+\indent  Fie $(X_n)_n$ un sir de v.a. si X o v.a. def ($\Omega,\textit{F},\mathbb{P}$). Spunem ca $X_n$ converge in probabilitate la X, si notam $X_n\xrightarrow{\mathbb{P}} X$ daca $\forall \epsilon >0,\: \lim_n \mathbb{P}(|X_n-x|\geq \varepsilon)\geq 0$.\\
+\indent Pentru $\forall \epsilon>0,\:\forall \delta > 0,\: \exists n_0\in\mathbb{N}$ a.i. $n\geq n_0$\\ \indent\indent\indent $\mathbb{P}(|X_n-x|\geq\underbrace{\varepsilon}_{acuratete})\leq\underbrace{\delta}_{nivel \:de\: incredere}$\\
+
+$\textbf{Definitie.}$ Numim esantion de volum n din populatia Q , v.a. $x_1,x_2,..,x_n$ independente si identic repartizate (i.i.d)\\
+\indent Media esantionului : ${\overline{X_n}=\frac{x_1+x_2+..+x_n}{n}}$\\
+\indent Repartitia $x_1,x_2,..,x_n$ esantion de medie $\mu$ si varianta $\sigma^2$\\
+\indent\indent\indent($\mathbb{E}[X_1]=\mu,\: Var(X_1)=\sigma^2$)\\
+$\mathbb{E}[X_n]=\mathbb{E}[\frac{x_1+x_2+..+x_n}{n}]=\frac{1}{n}(\mathbb{E}[X_1]+\mathbb{E}[X_2]+..+\mathbb{E}[X_n])=\mu$\\
+$Var(X_n)=Var(\frac{x_1+x_2+..+x_n}{n})=\frac{1}{n}(Var(X_1)+..+Var(X_n))=\frac{\sigma^2}{n}$\\
+
+\subsection{Legea numerelor mari}
+\noindent $\textit{Versiune  slaba}$\\
+\indent Fie $(X_n)_n$ sir de v.a. i.i.d. cu $\mathbb{E}[X_1]=\mu,\: Var(X_1)=\sigma^2<\infty$\\
+\indent\indent Atunci $X_n \xrightarrow{\mathbb{P}} X$\\
+$\textit{Versiune  tare}$\\
+\indent $(X_n)$ v.a. i.i.d. $\mathbb{E}[|X_1|]<\infty,\: \mathbb{E}[X_1]=\mu$\\
+\indent\indent Atunci $X_n \xrightarrow{a.s.} X$\\
+
+$\underline{Demonstratie}$ Pentru $\varepsilon > 0$\\
+\indent\indent $\mathbb{P}(|X_n-\mu|\geq \varepsilon)\xrightarrow{n\to\infty} X$\\
+\indent Inegalitatea lui Cebisev:\\
+$\mathbb{P}(|X_n-\mu|\geq\varepsilon)\leq\frac{Var(X_1)}{\varepsilon^3}=\frac{\sigma^2}{\varepsilon^2}\xrightarrow{n\to\infty} 0$\\
+Pentru un nivel de acuratete dat $\mathbb{P}(\mu-\varepsilon,\mu+\varepsilon)\to X_n \xrightarrow{n\to\infty} 1$\\
+
+\subsection{Integrarea Monte-Carlo}
+Presupunem ca avem o functie g si vrem sa calculam $\int^b_a g(x) dx$.\\
+\indent Presupunem ca pe $[a,b]$ avem $0\leq g(x)\leq c$.\\
+\includegraphics[width=90mm]{c14_p1.png}\\
+$A=[a,b]\times [0,c]$ -dreptunghi\\
+$B=\{(x,y)|a\leq x \leq b, 0\leq y\leq g(x)\}$\\
+Generam puncte Unif(A)\\
+$(x_1,y_1),..,(x_n,y_n)\sim \textit{U}(A)$\\
+$(x,y)\sim \textit{U}(A)$ daca $f_{(x,y)} (x,y)=\{\frac{1}{Arie(A)}, (x,y)\in A \:\: ,0 \:altfel\}$\\
+Arie(a)=c(b-a)\\
+$X\sim \textit{U}([a,b])$ indep de $Y\sim \textit{U}([a,c])$\\
+$f_x (x)=\frac{1}{b-a}* \mathds{1}_{[a,c]} (y)$\\
+$f_{(x,y)} (x,y)=f_x (x) * f_y (y)=\frac{1}{a(b-a)}* \mathds{1}_{[a,c]} (x,y)$\\
+Fie $ Z_i =\begin{cases}1 & (x_i,y_i)\in B\\0 & altfel, \: Z_i\sim B(p)\end{cases} $\\
+Din LNM $\Longrightarrow \sum_i=\frac{Z_1+Z_2+..+Z_n}{n} \xrightarrow{\mathbb{P}} p = \frac{Arie(B)}{c(b-a)}=\frac{\int_a^b g(x) dx}{c(b-a)}$\\
+
+\subsection{Teorema limita centrala(TLC)}
+\noindent Din LNM : $\overline{X_n}\xrightarrow{\mathbb{P}}\mathbb{E}[X_n]$\\
+Fie $x_1,..,x_n$ i.i.d. $\mathbb{E}[x_1]=\mu,\: Var(x_1)=\sigma^2$\\
+${\frac{X-\mathbb{E}[X]}{\sqrt{Var(X)}}=1}$\\
+Z = $\frac{X-\mathbb{E}[X]}{\sqrt{Var(X)}}=1 $ - Z s.n. variabila normalizata\\
+$Z_n=\frac{x_1+..x+n-\mathbb{E}[x_1+..+x_n]}{\sqrt{Var(x_1+..+x_n)}}=\frac{x_1+..+x_n- n*\mu}{\sqrt{n\sigma^2}}$ - variabila de scor\\
+$Z_n =\sqrt{n}(\frac{\overline{X_n}-\mu}{\sigma})$\\\\
+
+$\textbf{TLC}$\\
+Fie $(X_n)_n$ sir de v.a. i.i.d. $\mathbb{E}[X_1]=\mu<\infty,\: Var(X_1)=\sigma^2<\infty$.\\
+Atunci $\lim_n \mathbb{P}(Z_n\leq x)=\phi(x) \: \forall x$\\
+\indent unde $Z_n=\sqrt{x}*\frac{\overline{X_n}-\mu}{\sigma}\Longrightarrow \phi(x) = \int^{\infty}_{-\infty} \frac{1}{\sqrt{2\pi}}* e^{-t^2/2} dt$(functia de repartitie a N(0,1)\\
+\\
+$\textbf{Observatie}. \: x_1,x_1,..,x_n$ i.i.d. , $\mathbb{E}[x_i]=\mu,\: Var(x_i)=\sigma^2,\: S_n=x_1+x_2+..+x_n$\\
+$\mathbb{P}(S_n\leq c)=\mathbb{P}(\frac{S_n-\mathbb{E}[S_n]}{Var(S_n)}\leq \frac{c-\mathbb{E}[S_n]}{\sqrt{Var(S_n)}})=\mathbb{P}(Z_n\leq \frac{c* n\mu}{\sqrt{n\sigma^2}})\stackrel{TLC}{\simeq} \phi(\frac{x-n\mu}{\sigma\sqrt{n}})$\\
+
+\end{document}
+
